@@ -153,3 +153,9 @@ simboliai, pvz., ``06``; ``14``), atskiras skaitmuo – praktinės užduoties
 numeris). Kitaip įvardyti failai nebus vertinami. Failo pavadinime ar jo tekste
 neturi būti užrašų ar kitokių ženklų, kurie leistų identifikuoti darbo autorių
 (pvz., vardo, pavardės, mokyklos ir t. t.).
+
+
+Nuorodos
+--------
+
+- http://www.nec.lt/failai/4429_2014-IT-VBE.pdf

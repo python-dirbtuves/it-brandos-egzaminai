@@ -1,14 +1,4 @@
-# Number of items to vote for.
-N_ITEMS = 3
-
-# Map of max vote count to points.
-# Number of items in this dict should be equal to N_ITEMS.
-POINTS_MAP = {
-    1: 4,
-    2: 2,
-    3: 0
-}
-
+#!/usr/bin/env python3
 
 def parse_votes_line(line, n_items):
     votes = list(map(int, line.split()))
@@ -53,31 +43,8 @@ def get_winner_item(total_points):
 
 
 def count_votes(input_stream, points_map, n_items):
-    r"""Perform vote counting as described in README.rst
-
-    With input data defined below:
-
-        >>> import io
-        >>> input_stream = io.StringIO('\n'.join([
-        ...     '6',
-        ...     '15 10 22',
-        ...     '15 40 13',
-        ...     '23 26 26',
-        ...     '110 30 58',
-        ...     '33 33 32',
-        ...     '0 56 0',
-        ...     '2 1 3',
-        ... ]))
-
-    We should get these results:
-
-        >>> count_votes(input_stream, POINTS_MAP, N_ITEMS)
-        ([196, 195, 151], [6, 12, 6], 2)
-
-    """
     # First line from input stream tells us how many units we have.
     k = int(next(input_stream))
-    assert 1 <= k <= 10
 
     # Initialize totals and director points.
     total_votes = [0] * n_items
@@ -104,15 +71,32 @@ def count_votes(input_stream, points_map, n_items):
     return total_votes, final_points, winner_item
 
 
+def format_results(results):
+    votes, points, winner = results
+    yield ' '.join(map(str, votes))
+    yield ' '.join(map(str, points))
+    yield str(winner)
+
+
 def main():
+    # Number of items to vote for.
+    n_items = 3
+
+    # Map of max vote count to points.
+    # Number of items in this dict should be equal to n_items.
+    points_map = {
+        1: 4,
+        2: 2,
+        3: 0
+    }
+
     # Read and process input data.
     with open('U1.txt') as f:
-        results = count_votes(f, POINTS_MAP, N_ITEMS)
+        results = count_votes(f, points_map, n_items)
 
     # Write results to output file.
     with open('U1rez.txt', 'w') as f:
-        for result in results:
-            f.write('%s\n' % ' '.join(results))
+        f.write('\n'.join(format_results(results)))
 
 
 if __name__ == '__main__':
