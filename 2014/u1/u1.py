@@ -18,8 +18,10 @@ def add_director_points(total_points, director_points, max_point):
 def get_unit_points(points_map, votes):
     max_vote = max(votes)
     max_vote_count = votes.count(max_vote)
-    for vote in votes:
-        yield points_map[max_vote_count - 1] if vote == max_vote else 0
+    return [
+        points_map[max_vote_count - 1] if vote == max_vote else 0
+        for vote in votes
+    ]
 
 
 def get_final_points(total_points, director_points):
