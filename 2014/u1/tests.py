@@ -18,3 +18,7 @@ class U2Tests(unittest.TestCase):
         ])
 
         os.unlink('U1rez.txt')
+
+    def test_without_units(self):
+        results = u1.count_votes(iter(['0', '1 3 2']))
+        self.assertEqual(results, ([0, 0, 0], [1, 3, 2], 2))
