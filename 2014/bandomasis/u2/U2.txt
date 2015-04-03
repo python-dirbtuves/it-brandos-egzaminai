@@ -1,0 +1,11 @@
+5
+Jieznas             1
+Kauno
+Jonava              4
+Kauno
+Kavarskas           3
+Utenos
+Lazdijai            1
+Alytaus
+Simnas              1
+Alytaus 
