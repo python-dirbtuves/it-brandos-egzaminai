@@ -4,7 +4,7 @@ import unittest
 import u1
 
 
-class U2Tests(unittest.TestCase):
+class U1Tests(unittest.TestCase):
     def test(self):
         u1.main()
 

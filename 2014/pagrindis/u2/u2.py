@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 class Rover(object):
     BRAIN = {
         1: (0, 1),
@@ -9,12 +10,12 @@ class Rover(object):
     }
 
     def __init__(self, x=0, y=0):
-        self.set_position(x, y)
+        self.reset(x, y)
 
-    def set_position(self, x, y):
+    def reset(self, x, y):
         self.x, self.y = x, y
 
-    def is_in_position(self, x, y):
+    def has_arrived(self, x, y):
         return self.x == x and self.y == y
 
     def move(self, command):
@@ -23,32 +24,37 @@ class Rover(object):
         self.y += y
 
     def walk_to(self, x, y, n, *commands):
-        path = []
-        for command in commands[:n]:
+        """Executes commands and returns if x, y destination is reached."""
+        for i, command in enumerate(commands[:n], 1):
             self.move(command)
-            path.append(command)
-            if self.is_in_position(x, y):
-                return True, path
-        return False, path
+            if self.has_arrived(x, y):
+                return True, commands[:i]
+        return False, commands
 
 
 def read_ints(lines):
-    line = next(lines)
-    return map(int, line.split())
+    return map(int, next(lines).split())
 
 
 def consume_data(lines, rover):
+    # Get initial position.
     x0, y0 = read_ints(lines)
+
+    # Get destination.
     x1, y1 = read_ints(lines)
+
+    # Get number of commands to execute.
     n, = read_ints(lines)
+
+    # Send commands to rover.
     for i in range(n):
-        rover.set_position(x0, y0)
+        rover.reset(x0, y0)
         yield rover.walk_to(x1, y1, *read_ints(lines))
 
 
 def format_results(results):
     for found, path in results:
-        message = 'pasiektas tikslas' if found else 'sekos pabaiga'
+        message = "pasiektas tikslas" if found else "sekos pabaiga"
         yield '%-20s %s %s' % (message, ' '.join(map(str, path)), len(path))
 
 
@@ -59,7 +65,8 @@ def main():
 
     # Write results to output file.
     with open('U2rez.txt', 'w') as f:
-        f.write('\n'.join(format_results(results)))
+        for line in format_results(results):
+            print(line, file=f)
 
 
 if __name__ == '__main__':

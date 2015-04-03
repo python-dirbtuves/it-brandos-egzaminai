@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 def read_ints(lines):
     line = next(lines)
     return list(map(int, line.split()))
