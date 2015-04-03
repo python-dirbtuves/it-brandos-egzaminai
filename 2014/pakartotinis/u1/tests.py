@@ -12,13 +12,8 @@ class U1Tests(unittest.TestCase):
             lines = f.read().splitlines()
 
         self.assertEqual(lines, [
-            '196 195 151',
-            '6 12 6',
+            '2 4 2',
             '2',
         ])
 
         os.unlink('U1rez.txt')
-
-    def test_without_units(self):
-        results = u1.count_votes(iter(['0', '1 3 2']))
-        self.assertEqual(results, ([0, 0, 0], [1, 3, 2], 2))

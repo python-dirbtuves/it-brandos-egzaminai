@@ -67,7 +67,7 @@ Kiekvienos užduoties kataloge rasite tokius failus:
 
 ``tests.py``
     Šiame faile yra automatiniai užduoties testai. Testų paskirtis įvykdyti
-    programą, patikrinti ar jei grąžinta teisingus rezultatus pagal pateiktus
+    programą, patikrinti ar ji grąžina teisingus rezultatus pagal pateiktus
     įvesties duomenis.
 
 ``README.rst``
