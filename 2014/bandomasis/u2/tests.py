@@ -13,9 +13,9 @@ class U2Tests(unittest.TestCase):
 
         self.assertEqual(lines, [
             '3',
-            'Kauno 2 4',
-            'Utenos 1 3',
-            'Alytaus 2 1',
+            'Kauno         2 4',
+            'Utenos        1 3',
+            'Alytaus       2 1',
         ])
 
         os.unlink('U2rez.txt')
