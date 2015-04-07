@@ -1,0 +1,6 @@
+5 30
+Siuntuva  2 3
+Auda      3 -1
+Kostisa   -3 -2
+Linga     3 0
+Austuva   -2 -4
