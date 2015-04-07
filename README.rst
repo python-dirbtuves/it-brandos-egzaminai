@@ -31,6 +31,10 @@ atminties valdymu ir leidžia daugiau gilintis į sprendžiamą užduotį, o ne 
 ji yra taikoma įvairiausiose srityse, pradedant nuo mikrokontrolerių ar
 akademinių taikymų, baigiant interneto svetainėmis ar darbastalio programomis.
 
+Papildomai su Python galima mokytis įvairesnių programavimo paradigmų, tokių
+kaip funkcinis programavimas, objektinis programavimas, asinchroninis
+programavimas ir pan.
+
 
 Kaip paleisti sprendimų programas?
 ----------------------------------
@@ -76,6 +80,73 @@ Kiekvienos užduoties kataloge rasite tokius failus:
 
 Visi failų pavadinimai sutampa su tais, kurių reikalauja egzamino užduotis, šis
 failų ir jų pavadinimų sąrašas yra tik pavyzdinis.
+
+
+Pastabos dėl egzaminų užduočių
+------------------------------
+
+Kadangi Pascal ir C/C++ yra žemo lygio programavimo kalbos, o Python yra aukšto
+lygio programavimo kalba, tarp šių kalbų yra nemažai skirtumų. Šiame skyrelyje
+pateikiamos pastabos dėl užduočių formuluotės, kurios nėra visiškai tinkamos
+aukšto lygio kalboms.
+
+Įrašo tipo duomenų tipas
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Įrašo tipas yra Pascal savoka, C/C++ kalboje analogiškas tipas vadinamas
+„struktūra“. Tuo tarpu Python kalboje, tokio dalyko kaip „įrašo tipas“ arma
+„struktūra“ nėra.
+
+Artimiausias analogas tikriausiai būdų ``dict`` tipas arba klasės. Kai kuriais
+atvejais galima naudoti net gi ``collections.namedtuple``. Kurį duomenų tipą
+geriausia taikyti, priklauso užduoties. Saugiausias variantas tikriausiai būtų
+klasės.
+
+Apibrėžties sritys
+~~~~~~~~~~~~~~~~~~
+
+Dažnai užduotyse pateikiamos duomenų apibrėžties sritys, pavyzdžiui, nurodoma
+kiek objektų reikia nuskaityti, kokia tam tikro kintamojo minimali ir maksimali
+reikšmės.
+
+Tai palengvina užduotį statiškai tipizuotose kalbose, tokiose kaip Pascal ar
+C/C++, tačau Python veikia dinaminis atminties valdymas, todėl iš anksto
+apibrėžti kintamųjų tipų nereikia ir tokios galimybės net gi nėra.
+
+Iš esmės, pateiktą informaciją apie apibrėžimo sritis galima panaudoti nebent
+įvesties duomenų tikrinimui. Pavyzdžiui:
+
+.. code-block:: python
+
+    assert 2 <= n <= 50
+
+Dėl tos pačios statinio tipizavimo priežasties, įvesties duomenyse dažniausiai
+pateikiamas sekančių įrašų skaičius ir sudaroma prielaida, kad programos
+autorius visus duomenis nusiskaitys į atmintį. Tuo tarpu Python kalba turtinga
+aukšto lygio abstrakcijomis darbui su duomenimis. Python kalba turi
+iteratorius, kurie leidžia duomenis skaityti ir apdoroti srautu. Tai reiškia,
+kad nebūtina visų duomenų nusiskaityti į atminį, galima juos skaityti po vieną
+eilutę ir iš karto apdoroti.
+
+Nurodymai parašyti funkcijas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Užduotyse pasitaiko tokių nurodymų, kaip parašyti funkciją didžiausiai ar
+mažiausiai reikšmei surasti, surasti masyvo indeksą pagal reikšmę ir pan.
+
+Python kalboje, tokio pobūdžio funkcijos dažnai būna įsiūtos į kalbą.
+Pavyzdžiui surasti masyvo indeksą pagal reikšmę galima taip:
+
+.. code-block:: python
+
+    array.index(value)
+
+Mažiausios ir didžiausios reikšmės paiškai taip pat yra funkcijos:
+
+.. code-block:: python
+
+    min(array), max(array)
+
 
 
 .. _Python: https://www.python.org/
