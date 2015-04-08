@@ -1,36 +1,44 @@
 #!/usr/bin/env python3
 
 
-def read_ints(lines):
-    line = next(lines)
-    return list(map(int, line.split()))
+def isvezioti_picas(f):
+    # Nuskaitome įvesties failo pirmą eilutę, kurioje saugomas užsakovų skaičius
+    # ir dienos kilometrų planas.
+    uzsakovu_sk, km_planas = next(f).split()
+    uzsakovu_sk, km_planas = int(uzsakovu_sk), int(km_planas)
 
+    # Nustatomos pradinės kintamųjų reikšmės.
+    atstumas = 0
+    liko_uzsakovu = uzsakovu_sk
 
-def format_results(results):
-    return ' '.join(map(str, results))
+    # Šio ciklo pagalba vykdomas picų išvežiojimas skaičiuojant nuvažiuotą
+    # atstumą ir likusių užsakovų skaičių.
+    for liko_uzsakovu in reversed(range(uzsakovu_sk)):
 
+        # Nuskaitomos sekančio užsakovo koordinatės.
+        x, y = next(f).split()
+        x, y = abs(int(x)), abs(int(y))
 
-def process_data(lines):
-    distance = 0
-    n, m = read_ints(lines)
+        # Apskaičiuojamas nuvažiuotas atstumas.
+        atstumas = atstumas + (x + y) * 2
 
-    for i in range(n):
-        distance += sum(map(abs, read_ints(lines))) * 2
-        if distance > m:
+        # Jei dienos kilometų planas viršytas, nutraukimas ciklas ir grąžinami
+        # rezultatai.
+        if atstumas > km_planas:
             break
-    clients_left = n - i - 1
-    return clients_left, distance
+
+    return liko_uzsakovu, atstumas
 
 
-def main():
-    # Read and process input data.
+def programa():
+    # Nuskaitomi įvesties duomenys
     with open('U1.txt') as f:
-        results = process_data(f)
+        liko_uzsakovu, atstumas = isvezioti_picas(f)
 
-    # Write results to output file.
+    # Įrašomi rezultatai
     with open('U1rez.txt', 'w') as f:
-        f.write(format_results(results))
+        print(liko_uzsakovu, atstumas, file=f)
 
 
 if __name__ == '__main__':
-    main()
+    programa()

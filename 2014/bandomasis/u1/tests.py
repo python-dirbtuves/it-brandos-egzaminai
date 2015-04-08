@@ -6,7 +6,7 @@ import u1
 
 class U1Tests(unittest.TestCase):
     def test(self):
-        u1.main()
+        u1.programa()
 
         with open('U1rez.txt') as f:
             lines = f.read().splitlines()
