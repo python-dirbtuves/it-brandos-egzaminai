@@ -17,10 +17,10 @@ def isvezioti_picas(f):
 
         # Nuskaitomos sekančio užsakovo koordinatės.
         x, y = next(f).split()
-        x, y = abs(int(x)), abs(int(y))
+        x, y = int(x), int(y)
 
         # Apskaičiuojamas nuvažiuotas atstumas.
-        atstumas = atstumas + (x + y) * 2
+        atstumas = atstumas + (abs(x) + abs(y)) * 2
 
         # Jei dienos kilometų planas viršytas, nutraukimas ciklas ir grąžinami
         # rezultatai.
