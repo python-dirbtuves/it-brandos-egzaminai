@@ -9,16 +9,18 @@ def read_ints(lines):
 def read_row(lines):
     line = next(lines)
     company = line[:10].strip()
-    x, y = [abs(int(x)) for x in line[10:].split()]
-    return company, x, y
+    x, y = line[10:].split()
+    return company, int(x), int(y)
 
+def way_to_company(x, y):        # užduotyje reikalauja atskiros funkcijos
+    return (abs(x) + abs(y)) * 2
 
 def simulate_single_day(lines, n, m):
     distance = 0
     result = (0, distance, None)
     for i in range(n):
         company, x, y = read_row(lines)
-        distance += (x + y) * 2
+        distance += way_to_company(x, y)
         if distance >= m:
             return result
         result = (i+1, distance, company)
