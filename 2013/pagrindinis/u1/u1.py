@@ -9,7 +9,7 @@ def read_ints(lines):
 def read_row(lines):
     line = next(lines)
     company = line[:10].strip()
-    x, y = [abs(int(x)) for x in line[10:].split()]
+    x, y = [int(x) for x in line[10:].split()]
     return company, x, y
 
 def way_to_company(x, y):        # užduotyje reikalauja atskiros funkcijos
