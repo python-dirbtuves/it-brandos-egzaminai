@@ -1,24 +1,36 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 import pathlib
 import subprocess
 import argparse
 
 
-def run_tests(base, paths):
+def get_pytest():
+    paths = map(pathlib.Path, os.environ['PATH'].split(':'))
+    paths = [pathlib.Path(sys.executable).parent] + list(paths)
     for path in paths:
-        print('Testing %s...' % path.parent.relative_to(base), end=' ')
+        path = path / 'py.test'
+        if path.exists():
+            return str(path)
+    raise RuntimeError('py.test is not installed (pip install pytest)')
+
+
+def run_tests(base, paths):
+    pytest = get_pytest()
+    for path in paths:
+        print('%-24s' % ('%s...' % path.parent.relative_to(base)), end=' ')
         os.chdir(str(path.parent))
         try:
             subprocess.check_output([
-                'python3', '-m', 'unittest', '--quiet', 'tests.py',
+                pytest, '-vv', '--tb=native', 'tests.py',
             ], stderr=subprocess.STDOUT, universal_newlines=True)
         except subprocess.CalledProcessError as e:
             print()
             print(e.output)
         else:
-            print('OK.')
+            print('OK')
         os.chdir(str(base))
 
 

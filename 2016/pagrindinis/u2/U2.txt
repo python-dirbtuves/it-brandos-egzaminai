@@ -1,0 +1,11 @@
+10
+prisitraukimai       10
+atsispaudimai        15
+atsilenkimai         12
+prisitraukimai       4
+atsilenkimai         15
+atsilenkimai         10
+prisitraukimai       12
+atsilenkimai         10
+atsispaudimai        2
+atsispaudimai        2
