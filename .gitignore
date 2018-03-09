@@ -57,3 +57,6 @@ target/
 .ropeproject/
 
 output/
+
+.mypy_cache/
+.pytest_cache/

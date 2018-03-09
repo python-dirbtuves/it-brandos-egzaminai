@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+import pathlib
+import subprocess
+import sys
+
+
+class Config:
+
+    def __init__(self, base):
+        self.base = base
+        self.venv = base / 'env'
+        self.pip = self.venv / 'bin/pip'
+        self.mypy = self.venv / 'bin/mypy'
+        self.pytest = self.venv / 'bin/py.test'
+
+
+def ensure_venv(config: Config):
+    if not config.venv.exists():
+        subprocess.run(['python', '-mvenv', config.venv], check=True)
+    if not config.mypy.exists():
+        subprocess.run([config.pip, 'install', 'mypy'], check=True)
+    if not config.pytest.exists():
+        subprocess.run([config.pip, 'install', 'pytest', 'pytest-mock', 'pytest-cov'], check=True)
+
+
+def run_mypy(config, path):
+    files = [x for x in os.listdir(path.parent) if x.endswith('.py') and not x.startswith('test')]
+    subprocess.run(
+        [config.mypy, '--follow-imports=skip', '--disallow-any-unimported', '--strict', '--tb'] + files,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        universal_newlines=True,
+        cwd=path.parent,
+        check=True,
+    )
+
+
+def run_pytest(config, path):
+    subprocess.run(
+        [config.pytest, '-vvx', '--tb=native', 'tests.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        universal_newlines=True,
+        cwd=path.parent,
+        check=True,
+    )
+
+
+def run_tests(config: Config, paths):
+    for path in paths:
+        print('%-24s' % ('%s...' % path.parent.relative_to(config.base)), end=' ', flush=True)
+        try:
+            run_mypy(config, path)
+            run_pytest(config, path)
+        except subprocess.CalledProcessError as e:
+            print()
+            print(e.stdout)
+            return e.returncode
+        else:
+            print('OK', flush=True)
+
+
+def find_tests(paths):
+    for path in paths:
+        path = path.parent if path.is_file() else path
+        yield from sorted(path.resolve().glob('**/tests.py'))
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('paths', nargs='*')
+    args = parser.parse_args()
+
+    base = pathlib.Path(__file__).resolve().parent
+    config = Config(base)
+
+    if args.paths:
+        paths = args.paths
+    else:
+        paths = sorted([pathlib.Path(x) for x in os.listdir(base) if x.isdigit()])
+
+    ensure_venv(config)
+    return run_tests(config, find_tests(map(pathlib.Path, paths)))
+
+
+if __name__ == '__main__':
+    sys.exit(main() or 0)

@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 
+from typing import List, Tuple, Iterator, Optional
 
-class Player(object):
-    def __init__(self, k, times):
+
+class Player:
+    def __init__(self, k: int, times: List[int]) -> None:
         self.no = k
         self.playing = sum([t for t in times if t > 0])
         self.sitting = sum([abs(t) for t in times if t < 0])
         self.came_first = times[0] > 0
 
-    def get_better_player_by(self, other, prop):
+    def get_better_player_by(self, other: Optional['Player'], prop: str) -> 'Player':
         """Compare current palyer with the other by given property."""
         if other is None:
             return self
@@ -18,12 +20,12 @@ class Player(object):
             return self if getattr(self, prop) > getattr(other, prop) else other
 
 
-def read_ints(lines):
+def read_ints(lines: Iterator[str]) -> List[int]:
     """Returns list of integer from next line in given iterator of lines."""
     return list(map(int, next(lines).split()))
 
 
-def read_data(lines):
+def read_data(lines: Iterator[str]) -> Tuple[List[int], Optional[Player], Optional[Player]]:
     came_first = []
     most_playing = most_sitting = None
     n, = read_ints(lines)
@@ -37,7 +39,7 @@ def read_data(lines):
     return came_first, most_playing, most_sitting
 
 
-def main():
+def main() -> None:
     with open('U1.txt') as f:
         came_first, most_playing, most_sitting = read_data(f)
 

@@ -42,16 +42,16 @@ Kaip paleisti sprendimų programas?
 Visas sprendimų programas galite paleisti naudodami ``runtests.py`` skriptą. Iš
 komandinės eilutės šis skriptas paleidžiamas taip::
 
-    $ python3 runtests.py
+    $ python runtests.py
 
 Tam, kad paleisti tam tikrų metų arba vieną konkretų testą, galite nurodyti
 skriptui argumentą, kokius testus leisti, pavyzdžiui::
 
-    $ python3 runtests.py 2014
+    $ python runtests.py 2014
 
-    $ python3 runtests.py 2014/pagrindis
+    $ python runtests.py 2014/pagrindis
 
-    $ python3 runtests.py 2014/pagrindis/u1
+    $ python runtests.py 2014/pagrindis/u1
 
 
 Užduočių sprendimų struktūra
