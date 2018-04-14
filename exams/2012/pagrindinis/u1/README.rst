@@ -77,51 +77,27 @@ Duomenų ir rezultatų pavyzdys
 +----------------------------+--------------------------------------------+
 | Duomenų failas             | Paaiškinimai                               |
 +============================+============================================+
-| ::                         | Krepšininkų skaičius.                      |
-|                            |                                            |
-|    8                       | Krepšininko nr. 9 yra 5 laikai.            |
-|    9 5 7 -5 13 -4 11       |                                            |
-|    7 5 -3 12 -5 17 -3      | Krepšininko nr. 7 yra 5 laikai.            |
-|    25 7 12 -3 5 -5 7 -5 3  |                                            |
-|    14 5 12 -3 10 -7 8      | Krepšininko nr. 25 yra 7 laikai.           |
-|    5 1 -40                 |                                            |
-|    33 5 15 -5 9 -3 8       | Krepšininko nr. 14 yra 5 laikai.           |
+| ::                         | | Krepšininkų skaičius.                    |
+|                            | | Krepšininko nr. 9 yra 5 laikai.          |
+|    8                       | | Krepšininko nr. 7 yra 5 laikai.          |
+|    9 5 7 -5 13 -4 11       | | Krepšininko nr. 25 yra 7 laikai.         |
+|    7 5 -3 12 -5 17 -3      | | Krepšininko nr. 14 yra 5 laikai.         |
+|    25 7 12 -3 5 -5 7 -5 3  | | Krepšininko nr. 5 yra 1 laikas.          |
+|    14 5 12 -3 10 -7 8      | | Krepšininko nr. 33 yra 5 laikai.         |
+|    5 1 -40                 | | Krepšininko nr. 11 yra 5 laikai.         |
+|    33 5 15 -5 9 -3 8       | | Krepšininko nr. 13 yra 5 laikai.         |
 |    11 5 -12 8 -5 12 -3     |                                            |
-|    13 5 3 -4 25 -5 3       | Krepšininko nr. 5 yra 1 laikas.            |
-|                            |                                            |
-|                            | Krepšininko nr. 33 yra 5 laikai.           |
-|                            |                                            |
-|                            | Krepšininko nr. 11 yra 5 laikai.           |
-|                            |                                            |
-|                            | Krepšininko nr. 13 yra 5 laikai.           |
+|    13 5 3 -4 25 -5 3       |                                            |
 +----------------------------+--------------------------------------------+
-
-
-Startinio penketuko numeriai.
-
-Daugiausia laiko aikštelėje buvo 33 –i as
-krepšininkas: 32 min.
-
-Daugiausia laiko sėdėjo ant atsarginių
-suolelio 5 – as krepšininkas: 40 min.      
-
 
 +----------------------------+--------------------------------------------+
 | Rezultatų failas           | Paaiškinimai                               |
 +============================+============================================+
-| ::                         | Startinio penketuko numeriai.              |
-|                            |                                            |
-|    9 13 14 25 33           | Daugiausia laiko aikštelėje buvo 33 –i as  |
-|    33 32                   | krepšininkas: 32 min.                      |
-|    5 40                    |                                            |
-|                            | Daugiausia laiko sėdėjo ant atsarginių     |
-|                            | suolelio 5 – as krepšininkas: 40 min.      |
-|                            |                                            |
-|                            |                                            |
-|                            |                                            |
-|                            |                                            |
-|                            |                                            |
-|                            |                                            |
+| ::                         | | Startinio penketuko numeriai.            |
+|                            | | Daugiausia laiko aikštelėje buvo 33–ias  |
+|    9 13 14 25 33           |   krepšininkas: 32 min.                    |
+|    33 32                   | | Daugiausia laiko sėdėjo ant atsarginių   |
+|    5 40                    |   suolelio 5–as krepšininkas: 40 min.      |
 +----------------------------+--------------------------------------------+
 
 Nuorodos
