@@ -40,7 +40,7 @@ Vienos komandos duomenys yra tekstiniame faile ``U1.txt``:
     suolelio, vėl 9 min. žaidė ir likusias iki rungtynių pabaigos 2 min.
     sėdėjo.
 
-  *Pastaba.*  Rungtynių t rukmė 40 min.
+*Pastaba.*  Rungtynių t rukmė 40 min.
 
 Rezultatai
 ----------
