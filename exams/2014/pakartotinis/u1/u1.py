@@ -66,7 +66,3 @@ def main(path: Path) -> None:
     with open(path / 'U1rez.txt', 'w') as f:
         print(*worst_votes, file=f)
         print(worst_item, file=f)
-
-
-if __name__ == '__main__':
-    main(Path())

@@ -6,147 +6,163 @@ svetainėje.
 
 Visos užduotys išspręstos naudojant Python_ programavimo kalbą.
 
-Kodėl Python?
--------------
-
-Lietuvoje brandos egzaminų programavimo užduotis leidžiama spręsti naudojant
-Pascal arba C/C++ programavimo kalbas. Tačiau šios kalbos yra žemo lygio
-programavimo kalbos, kurios nėra patogios mokytis programavimo. C/C++ yra sena
-kalba, tačiau vis dar plačiai naudojamos ir šiandien, tuo tarpu Pascal yra
-labai sena ir šiandien beveik nebenaudojama programavimo kalba.
-
-C/C++ programavimo kalba dažniausiai naudojama tada, kai siekiama labai greito
-veikimo, technologijos ir platformos neutralumo arba kai programa turi
-glaudžiai bendrauti su kompiuterio ar mikrokontrolerių geležimi. Tačiau C/C++
-būdama žemo lygio programavimo kalba reikalauja suprasti daug techninių
-detalių, kurios apsunkina programavimo pagrindų mokymąsi. Studentai pasirinkę
-programavimo kryptį tikrai turėtų susipažinti so C/C++ kalbomis, tačiau
-mokiniams tai yra tikrai per daug.
-
-Python yra šiuolaikiška, lengvai išmokstama, aukšto lygio programavimo kalba.
-Python yra interpretuojama kalba, todėl programos nereikia kompiliuoti, taip
-pat Python turi dinaminę tipų sistemą, kuri leidžia išvengti rūpesčių su
-atminties valdymu ir leidžia daugiau gilintis į sprendžiamą užduotį, o ne į
-žemo lygio mašinines problemas. Python yra universali programavimo kalba, todėl
-ji yra taikoma įvairiausiose srityse, pradedant nuo mikrokontrolerių ar
-akademinių taikymų, baigiant interneto svetainėmis ar darbastalio programomis.
-
-Papildomai su Python galima mokytis įvairesnių programavimo paradigmų, tokių
-kaip funkcinis programavimas, objektinis programavimas, asinchroninis
-programavimas ir pan.
-
 
 Kaip paleisti sprendimų programas?
 ----------------------------------
 
-Visas sprendimų programas galite paleisti naudodami ``runtests.py`` skriptą. Iš
-komandinės eilutės šis skriptas paleidžiamas taip::
+Tam, kad paleisti sprendimų programas reikalinga **Python 3.6** ar vėlesnė
+versija.
 
-    $ python runtests.py
+Visas sprendimų programas galite paleisti iš komandų eilutės::
+
+  $ ./test
 
 Tam, kad paleisti tam tikrų metų arba vieną konkretų testą, galite nurodyti
 skriptui argumentą, kokius testus leisti, pavyzdžiui::
 
-    $ python runtests.py 2014
+  $ ./test exams/2014
 
-    $ python runtests.py 2014/pagrindis
+  $ ./test exams/2014/pagrindis
 
-    $ python runtests.py 2014/pagrindis/u1
+  $ ./test exams/2014/pagrindis/u1
 
 
 Užduočių sprendimų struktūra
 ----------------------------
 
-Visi užduočių sprendimai suskirstyti į katalogus pagal metus, egzamino sesijas
-ir užduotis. Užduotys pavadintos ``u1``, ``u2`` ir pan. pavadinimais. Egzaminų
-sesijos pavadintos ``bandomasis``, ``pagrindis`` ir ``pakartotinis``.
+Kiekvienos egzamino užduoties kataloge rasite tokius failus:
 
-Kiekvienos užduoties kataloge rasite tokius failus:
+``README.rst``
+    Šiame faile pateikiama informacija apie užduotį ir nuorodą į užduoties
+    dokumentą nec.lt svetainėje.
 
-``u1.py``
-    Šiame faile rasite užduoties programos kodą.
-
-``U1.txt``
-    Šiame ir panašaus pobūdžio failuose rasite užduoties įvesties duomenis.
+``uX.py``
+    Šiame faile rasite užduoties programos sprendomo kodą.
 
 ``tests.py``
     Šiame faile yra automatiniai užduoties testai. Testų paskirtis įvykdyti
     programą, patikrinti ar ji grąžina teisingus rezultatus pagal pateiktus
     įvesties duomenis.
 
-``README.rst``
-    Šiame faile pateikiama informacija apie užduotį, nuorodą į užduoties
-    dokumentą.
 
 Visi failų pavadinimai sutampa su tais, kurių reikalauja egzamino užduotis, šis
 failų ir jų pavadinimų sąrašas yra tik pavyzdinis.
 
 
-Pastabos dėl egzaminų užduočių
-------------------------------
+Sprendimų sąrašas
+=================
 
-Kadangi Pascal ir C/C++ yra žemo lygio programavimo kalbos, o Python yra aukšto
-lygio programavimo kalba, tarp šių kalbų yra nemažai skirtumų. Šiame skyrelyje
-pateikiamos pastabos dėl užduočių formuluotės, kurios nėra visiškai tinkamos
-aukšto lygio kalboms.
+.. list-table::
+  :header-rows: 1
 
-Įrašo tipo duomenų tipas
-~~~~~~~~~~~~~~~~~~~~~~~~
+  * - Egzaminas
+    - Užduočių sprendimai
 
-Įrašo tipas yra Pascal savoka, C/C++ kalboje analogiškas tipas vadinamas
-„struktūra“. Tuo tarpu Python kalboje, tokio dalyko kaip „įrašo tipas“ arma
-„struktūra“ nėra.
+  * - `2006. Pagrindinis <http://nec.lt/failai/149_uzduotys_2006_VBE_IT.pdf>`_
+    - | 1 užduotis. Elektros grandinės varžos skaičiavimas
+      | 2 užduotis. Kelionė
 
-Artimiausias analogas tikriausiai būdų ``dict`` tipas arba klasės. Kai kuriais
-atvejais galima naudoti net gi ``collections.namedtuple``. Kurį duomenų tipą
-geriausia taikyti, priklauso užduoties. Saugiausias variantas tikriausiai būtų
-klasės.
+  * - `2007. Pagrindinis <http://nec.lt/failai/80_uzduotys_2007_VBE_IT.pdf>`_
+    - | 1 užduotis. Grybai
+      | 2 užduotis. Grybautojai
 
-Apibrėžties sritys
-~~~~~~~~~~~~~~~~~~
+  * - `2008. Pagrindinis <http://nec.lt/failai/511_uzduotys_2008_VBE_IT.pdf>`_
+    - | 1 užduotis. Tyrimai
+      | 2 užduotis. Transportas
 
-Dažnai užduotyse pateikiamos duomenų apibrėžties sritys, pavyzdžiui, nurodoma
-kiek objektų reikia nuskaityti, kokia tam tikro kintamojo minimali ir maksimali
-reikšmės.
+  * - `2008. Pakartotinis (zip)
+      <http://nec.lt/failai/870_2008_pakartotine_s_informacines_technologijos.zip>`_
+    - | 1 užduotis. Metro
+      | 2 užduotis. Amžius
 
-Tai palengvina užduotį statiškai tipizuotose kalbose, tokiose kaip Pascal ar
-C/C++, tačau Python veikia dinaminis atminties valdymas, todėl iš anksto
-apibrėžti kintamųjų tipų nereikia ir tokios galimybės net gi nėra.
+  * - `2009. Pagrindinis <http://nec.lt/failai/1044_uzduotys_2009_VBE_inf_technol.pdf>`_
+    - | 1 užduotis. Mainai
+      | 2 užduotis. Varžybos
 
-Iš esmės, pateiktą informaciją apie apibrėžimo sritis galima panaudoti nebent
-įvesties duomenų tikrinimui. Pavyzdžiui:
+  * - `2009. Pakartotinis <http://nec.lt/failai/1423_IT-2VBE-2009.pdf>`_
+    - | 1 užduotis. Turistai
+      | 2 užduotis. Varžybos (pakartotinis)
 
-.. code-block:: python
+  * - `2010. Pagrindinis <http://nec.lt/failai/1602_IT-pagr-2010.pdf>`_
+    - | 1 užduotis. Šachmatų turnyras
+      | 2 užduotis. Gimtadienis
 
-    assert 2 <= n <= 50
+  * - `2010. Pakartotinis <http://nec.lt/failai/1904_IT-2-2010_uzduotis.pdf>`_
+    - | 1 užduotis. Šachmatų turnyras (pakartotinis)
+      | 2 užduotis. Gimtadienis (pakartotinis)
 
-Dėl tos pačios statinio tipizavimo priežasties, įvesties duomenyse dažniausiai
-pateikiamas sekančių įrašų skaičius ir sudaroma prielaida, kad programos
-autorius visus duomenis nusiskaitys į atmintį. Tuo tarpu Python kalba turtinga
-aukšto lygio abstrakcijomis darbui su duomenimis. Python kalba turi
-iteratorius, kurie leidžia duomenis skaityti ir apdoroti srautu. Tai reiškia,
-kad nebūtina visų duomenų nusiskaityti į atminį, galima juos skaityti po vieną
-eilutę ir iš karto apdoroti.
+  * - `2010. Bandomasis <http://nec.lt/failai/1506_IT_VBE_band_2010.pdf>`_
+    - | 1 užduotis. Žirniai
+      | 2 užduotis. Pasirinkimas
 
-Nurodymai parašyti funkcijas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  * - `2011. Pagrindinis <http://nec.lt/failai/2062_IT-VBE-1_2011.pdf>`_
+    - | 1 užduotis. Pirštinės
+      | 2 užduotis. Šokiai
 
-Užduotyse pasitaiko tokių nurodymų, kaip parašyti funkciją didžiausiai ar
-mažiausiai reikšmei surasti, surasti masyvo indeksą pagal reikšmę ir pan.
+  * - `2011. Pakartotinis <http://nec.lt/failai/2425_IT-2-2011.pdf>`_
+    - | 1 užduotis. Pirštinės (pakartotinis)
+      | 2 užduotis. Šokiai (pakartotinis)
 
-Python kalboje, tokio pobūdžio funkcijos dažnai būna įsiūtos į kalbą.
-Pavyzdžiui surasti masyvo indeksą pagal reikšmę galima taip:
+  * - `2012. Pagrindinis <http://nec.lt/failai/2730_IT-1-2012.pdf>`_
+    - | `1 užduotis. Krepšinis
+        <https://github.com/python-dirbtuves/it-brandos-egzaminai/tree/master/exams/2012/pagrindinis/u1>`_
+      | `2 užduotis. Kauliukai
+        <https://github.com/python-dirbtuves/it-brandos-egzaminai/tree/master/exams/2012/pagrindinis/u2>`_
 
-.. code-block:: python
+  * - `2013. Pagrindinis <http://nec.lt/failai/3679_2013-IT-1-uzd-intern.pdf>`_
+    - | `1 užduotis. Siuntų tarnba
+        <https://github.com/python-dirbtuves/it-brandos-egzaminai/tree/master/exams/2013/pagrindinis/u1>`_
+      | `2 užduotis. Miestai ir apskritys
+        <https://github.com/python-dirbtuves/it-brandos-egzaminai/tree/master/exams/2013/pagrindinis/u2>`_
 
-    array.index(value)
+  * - `2013. Pavyzdinės <http://nec.lt/failai/3398_2013-IT-pavyz-uzd.pdf>`_
+    - | 1 užduotis. Skaičių dalumas
+      | 2 užduotis. Batai
+      | 3 užduotis. Žvejai
 
-Mažiausios ir didžiausios reikšmės paiškai taip pat yra funkcijos:
+  * - `2014. Pagrindinis <http://nec.lt/failai/4429_2014-IT-VBE.pdf>`_
+    - | `1 užduotis. Balsavimo rezultatai
+        <https://github.com/python-dirbtuves/it-brandos-egzaminai/tree/master/exams/2014/pagrindinis/u1>`_
+      | `2 užduotis. Marsaeigis
+        <https://github.com/python-dirbtuves/it-brandos-egzaminai/tree/master/exams/2014/pagrindinis/u2>`_
 
-.. code-block:: python
+  * - `2014. Pakartotinis <http://nec.lt/failai/4914_2014-IT-1_uzd-PK.pdf>`_
+    - | `1 užduotis. Balsavimo rezultatai (pakartotinis)
+        <https://github.com/python-dirbtuves/it-brandos-egzaminai/tree/master/exams/2014/pakartotinis/u1>`_
+      | `2 užduotis. Marsaeigis (pakartotinis)
+        <https://github.com/python-dirbtuves/it-brandos-egzaminai/tree/master/exams/2014/pakartotinis/u2>`_
 
-    min(array), max(array)
+  * - `2014. Bandomasis <http://nec.lt/failai/4118_2014-IT-bandomasis.pdf>`_
+    - | `1 užduotis. Picerija
+        <https://github.com/python-dirbtuves/it-brandos-egzaminai/tree/master/exams/2014/bandomasis/u1>`_
+      | `2 užduotis. Savivaldybės ir apskritys
+        <https://github.com/python-dirbtuves/it-brandos-egzaminai/tree/master/exams/2014/bandomasis/u2>`_
 
+  * - `2015. Pagrindinis <http://www.nec.lt/failai/5256_IT-VBE-1_2015.pdf>`_
+    - | 1 užduotis. Dalybos
+      | 2 užduotis. Avys
+
+  * - `2015. Pakartotinis (zip) <http://nec.lt/failai/5943_IT.zip>`_
+    - | 1 užduotis. Lobis
+      | 2 užduotis. Mokiniai
+
+  * - `2016. Pagrindinis <http://nec.lt/failai/6287_IT-VBE-1_2016-GALUTINIS.pdf>`_
+    - | `1 užduotis. Kuprinės
+        <https://github.com/python-dirbtuves/it-brandos-egzaminai/tree/master/exams/2016/pagrindinis/u1>`_
+      | `2 užduotis. Mankšta
+        <https://github.com/python-dirbtuves/it-brandos-egzaminai/tree/master/exams/2016/pagrindinis/u2>`_
+
+  * - `2016. Pakartotinis <http://nec.lt/failai/6688_IT-VBE-2_2016.pdf>`_
+    - | 1 užduotis. Ūgis
+      | 2 užduotis. Takai
+
+  * - `2017. Pagrindinis <http://nec.lt/failai/6996_IT-VBE-1_2017-GALUTINE.pdf>`_
+    - | 1 užduotis. Šešioliktainiai skaičiai
+      | 2 užduotis. Piešinys
+
+  * - `2017. Pakartotinis <http://nec.lt/failai/7333_IT-VBE-2_2017.pdf>`_
+    - | 1 užduotis. Dešimtainiai skaičiai
+      | 2 užduotis. Kvadratai
 
 
 .. _Python: https://www.python.org/

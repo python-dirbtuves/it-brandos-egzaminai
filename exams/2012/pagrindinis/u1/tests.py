@@ -19,3 +19,17 @@ def test(path):
         '33 32',
         '5 40',
     ]
+
+
+def test_equal_case(path):
+    (path / 'U1.txt').write(
+        '2',
+        '1 2 8 -8',
+        '2 2 8 -9',
+    )
+    u1.main(path)
+    assert (path / 'U1rez.txt').read() == [
+        '1 2',
+        '1 8',
+        '2 9'
+    ]

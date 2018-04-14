@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from pathlib import Path
 from typing import List, Tuple, Iterator
 
@@ -16,7 +14,7 @@ def read_row(lines: Iterator[str], k: int) -> Tuple[str, List[int]]:
 
 
 def get_points(points: List[int]) -> int:
-    return sum([p if p % 2 == 0 else -p for p in points])
+    return sum(p if p % 2 == 0 else -p for p in points)
 
 
 def get_even_points(points: List[int]) -> int:
@@ -37,7 +35,3 @@ def main(path: Path) -> None:
     with open(path / 'U2rez.txt', 'w') as f:
         points, _, name = result[0]
         print('%s%s' % (name, -points), file=f)
-
-
-if __name__ == '__main__':
-    main(Path())

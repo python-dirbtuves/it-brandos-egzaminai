@@ -46,7 +46,3 @@ def main(path: Path) -> None:
     with open(path / 'U2rez.txt', 'w') as fout, open(path / 'U2.txt') as fin:
         for line in read_lines(brain, fin):
             print(*line, file=fout)
-
-
-if __name__ == '__main__':
-    main(Path())

@@ -40,7 +40,3 @@ def main(path: Path) -> None:
     # Įrašomi rezultatai
     with open(path / 'U1rez.txt', 'w') as f:
         print(uzsakovu_sk, atstumas, file=f)
-
-
-if __name__ == '__main__':
-    main(Path())

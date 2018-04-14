@@ -20,7 +20,7 @@ class Config:
 
 def ensure_venv(config: Config):
     if not config.venv.exists():
-        subprocess.run(['python', '-mvenv', config.venv], check=True)
+        subprocess.run(['python3.6', '-m', 'venv', config.venv], check=True)
     if not config.mypy.exists():
         subprocess.run([config.pip, 'install', 'mypy'], check=True)
     if not config.pytest.exists():
@@ -41,8 +41,9 @@ def run_mypy(config, path):
 
 
 def run_pytest(config, path):
+    coverage = sum([['--cov', u.stem] for u in path.parent.glob('u*.py')], [])
     subprocess.run(
-        [config.pytest, '-vvx', '--tb=native', path],
+        [config.pytest, '-vvx', '--tb=native'] + coverage + ['--cov-report', 'term-missing', '--cov-fail-under', '100', path],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         universal_newlines=True,

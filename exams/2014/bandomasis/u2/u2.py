@@ -1,14 +1,7 @@
-#!/usr/bin/env python3
-
 from collections import defaultdict
 from operator import itemgetter
 from pathlib import Path
 from typing import List, Tuple, Iterator, Dict
-
-
-def read_ints(lines: Iterator[str]) -> List[int]:
-    """Returns list of integer from next line in given iterator of lines."""
-    return list(map(int, next(lines).split()))
 
 
 def read_row(lines: Iterator[str]) -> Tuple[str, int, str]:
@@ -18,7 +11,6 @@ def read_row(lines: Iterator[str]) -> Tuple[str, int, str]:
 
 
 def read_data(lines: Iterator[str], k: int) -> Dict[str, Dict[str, int]]:
-    """Returns aggregated data by districts and municipalities."""
     data: Dict[str, Dict[str, int]] = defaultdict(lambda: defaultdict(int))
     for i in range(k):
         municipality, n_schools, district = read_row(lines)
@@ -39,7 +31,7 @@ def calculate_stats(data: Dict[str, Dict[str, int]]) -> List[Tuple[str, int, int
 
 def main(path: Path) -> None:
     with open(path / 'U2.txt') as f:
-        k, = read_ints(f)
+        k = int(next(f).strip())
         data = read_data(f, k)
         stats = calculate_stats(data)
 
@@ -47,7 +39,3 @@ def main(path: Path) -> None:
         print(len(data), file=f)
         for row in stats:
             print('%-13s %d %d' % row, file=f)
-
-
-if __name__ == '__main__':
-    main(Path())

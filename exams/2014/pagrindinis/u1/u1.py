@@ -83,7 +83,3 @@ def main(path: Path) -> None:
     with open(path / 'U1rez.txt', 'w') as f:
         for line in format_results(*results):
             print(line, file=f)
-
-
-if __name__ == '__main__':
-    main(Path())

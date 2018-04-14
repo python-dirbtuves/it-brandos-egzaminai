@@ -1,7 +1,7 @@
 import u1
 
 
-def test(path):
+def test_a_pvz(path):
     (path / 'U1.txt').write(
         '6',
         '5000',
@@ -17,8 +17,13 @@ def test(path):
     ]
 
 
-def test_no_matches(mocker, path):
-    mocker.patch('u1.weights', return_value=[3000, 3500, 2000])
+def test_b_pvz(path):
+    (path / 'U1.txt').write(
+        '3',
+        '3000',
+        '3500',
+        '2000',
+    )
     u1.main(path)
     assert (path / 'U1rez.txt').read() == [
         '3500 0',

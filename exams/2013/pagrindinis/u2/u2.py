@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import sys
 import operator
 import collections
@@ -44,7 +42,3 @@ def main(path: Path) -> None:
         for record in sorted(result.values(), key=sort_key):
             values = (record.district, record.smallest, record.total)
             print('%-13s %d %d' % values, file=f)
-
-
-if __name__ == '__main__':
-    main(Path())
