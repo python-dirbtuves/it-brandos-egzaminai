@@ -16,6 +16,7 @@ class Config:
         self.mypy = self.venv / 'bin/mypy'
         self.pytest = self.venv / 'bin/py.test'
         self.flake8 = self.venv / 'bin/flake8'
+        self.restview = self.venv / 'bin/restview'
 
 
 def ensure_venv(config: Config):
@@ -27,12 +28,14 @@ def ensure_venv(config: Config):
         subprocess.run([config.pip, 'install', 'pytest', 'pytest-mock', 'pytest-cov'], check=True)
     if not config.flake8.exists():
         subprocess.run([config.pip, 'install', 'flake8'], check=True)
+    if not config.restview.exists():
+        subprocess.run([config.pip, 'install', 'restview'], check=True)
 
 
 def run_mypy(config, path):
     files = [path.parent / x for x in os.listdir(path.parent) if x.endswith('.py') and not x.startswith('test')]
     subprocess.run(
-        [config.mypy, '--follow-imports=skip', '--disallow-any-unimported', '--strict', '--tb'] + files,
+        [config.mypy, '--follow-imports=skip', '--show-traceback'] + files,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         universal_newlines=True,
