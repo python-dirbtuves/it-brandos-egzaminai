@@ -28,4 +28,3 @@ def main(path):
     data = read_data(path)
     result = simulate(data)
     write_data(path, result)
-
