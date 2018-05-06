@@ -55,6 +55,7 @@ target/
 
 # Editor specific files
 .ropeproject/
+.idea/
 
 output/
 
