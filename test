@@ -5,6 +5,7 @@ import os
 import pathlib
 import subprocess
 import sys
+import pip
 
 
 class Config:
@@ -12,30 +13,40 @@ class Config:
     def __init__(self, base):
         self.base = base
         self.venv = base / 'env'
-        self.pip = self.venv / 'bin/pip'
-        self.mypy = self.venv / 'bin/mypy'
-        self.pytest = self.venv / 'bin/py.test'
-        self.flake8 = self.venv / 'bin/flake8'
-        self.restview = self.venv / 'bin/restview'
+        if os.name == 'nt':
+            loc = 'Scripts'
+        else:
+            loc = 'bin'
+        self.pip = self.venv / (loc + '/pip')
+        self.mypy = self.venv / (loc + '/mypy')
+        self.pytest = self.venv / (loc + '/py.test')
+        self.flake8 = self.venv / (loc + '/flake8')
+        self.restview = self.venv / (loc + '/restview')
 
 
 def ensure_venv(config: Config):
     if not config.venv.exists():
-        subprocess.run(['python3.6', '-m', 'venv', config.venv], check=True)
+        subprocess.run([sys.executable, '-m', 'venv', str(config.venv)], check=True)
     if not config.mypy.exists():
-        subprocess.run([config.pip, 'install', 'mypy'], check=True)
+        pip.main(['install', 'mypy'])
+        #subprocess.run([str(config.pip), 'install', 'mypy'], check=True)
     if not config.pytest.exists():
-        subprocess.run([config.pip, 'install', 'pytest', 'pytest-mock', 'pytest-cov'], check=True)
+        pip.main(['install', 'pytest'])
+        pip.main(['install', 'pytest-mock'])
+        pip.main(['install', 'pytest-cov'])
+        #subprocess.run([str(config.pip), 'install', 'pytest', 'pytest-mock', 'pytest-cov'], check=True)
     if not config.flake8.exists():
-        subprocess.run([config.pip, 'install', 'flake8'], check=True)
+        pip.main(['install', 'flake8'])
+        #subprocess.run([str(config.pip), 'install', 'flake8'], check=True)
     if not config.restview.exists():
-        subprocess.run([config.pip, 'install', 'restview'], check=True)
+        pip.main(['install', 'restview'])
+        #subprocess.run([str(config.pip), 'install', 'restview'], check=True)
 
 
 def run_mypy(config, path):
     files = [path.parent / x for x in os.listdir(path.parent) if x.endswith('.py') and not x.startswith('test')]
     subprocess.run(
-        [config.mypy, '--follow-imports=skip', '--show-traceback'] + files,
+        [str(config.mypy), '--follow-imports=skip', '--show-traceback'] + [str(i) for i in files],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         universal_newlines=True,
@@ -46,7 +57,7 @@ def run_mypy(config, path):
 def run_pytest(config, path):
     coverage = sum([['--cov', u.stem] for u in path.parent.glob('u*.py')], [])
     subprocess.run(
-        [config.pytest, '-vvx', '--tb=native'] + coverage + ['--cov-report', 'term-missing', '--cov-fail-under', '100', path],
+        [str(config.pytest), '-vvx', '--tb=native'] + coverage + ['--cov-report', 'term-missing', '--cov-fail-under', '100', str(path)],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         universal_newlines=True,
@@ -56,7 +67,7 @@ def run_pytest(config, path):
 
 def run_flake8(config, path):
     subprocess.run(
-        [config.flake8, '--exclude=env,.ropeproject', '--max-line-length=120', path],
+        [str(config.flake8), '--exclude=env,.ropeproject', '--max-line-length=120', str(path)],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         universal_newlines=True,
