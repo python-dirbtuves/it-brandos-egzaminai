@@ -5,6 +5,7 @@ import os
 import pathlib
 import subprocess
 import sys
+import pip
 
 
 class Config:
@@ -21,15 +22,17 @@ class Config:
 
 def ensure_venv(config: Config):
     if not config.venv.exists():
-        subprocess.run(['python3.6', '-m', 'venv', config.venv], check=True)
+        subprocess.run([sys.executable, '-m', 'venv', str(config.venv)], check=True)
     if not config.mypy.exists():
-        subprocess.run([config.pip, 'install', 'mypy'], check=True)
+        pip.main(['install', 'mypy'])
     if not config.pytest.exists():
-        subprocess.run([config.pip, 'install', 'pytest', 'pytest-mock', 'pytest-cov'], check=True)
+        pip.main(['install', 'pytest'])
+        pip.main(['install', 'pytest-mock'])
+        pip.main(['install', 'pytest-cov'])
     if not config.flake8.exists():
-        subprocess.run([config.pip, 'install', 'flake8'], check=True)
+        pip.main(['install', 'flake8'])
     if not config.restview.exists():
-        subprocess.run([config.pip, 'install', 'restview'], check=True)
+        pip.main(['install', 'restview'])
 
 
 def run_mypy(config, path):
