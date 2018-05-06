@@ -4,7 +4,7 @@
 .. default-role:: math
 
 Vincas turi tekstinį failą su piešinio duomenimis. Piešinys sudarytas iš
-langelių. Šių langelių spalvas nusako trys sveiki eji skaičiai nuo 0 iki 255
+langelių. Šių langelių spalvas nusako trys sveikieji skaičiai nuo 0 iki 255
 (RGB komponentės).
 
 Vincui reikia paversti pradinius dešimtainius skaičius į šešioliktainį kodą ir
