@@ -1,11 +1,13 @@
 def main(path):
     with open(path / 'U1.txt') as f:
-        data = f.readlines()
-        height, width = [int(i) for i in data[0].split(' ')]
-        data = data[1:]
-        answer = ''
-        for index, line in enumerate(data):
-            answer += ''.join(('0', '')[int(i) > 16] + hex(int(i))[2:].upper() for i in line.split(' ')) + (';', '\n')[(index + 1) % width == 0]
+        height, width = map(int, next(f).split())
+        answer = '\n'.join([
+            ';'.join([
+                ''.join(f'{x:02X}' for x in map(int, next(f).split()))
+                for i in range(width)
+            ])
+            for j in range(height)
+        ])
 
     with open(path / 'U1rez.txt', 'w') as f:
         f.write(answer)
