@@ -5,7 +5,6 @@ import os
 import pathlib
 import subprocess
 import sys
-import pip
 
 
 class Config:
@@ -28,19 +27,13 @@ def ensure_venv(config: Config):
     if not config.venv.exists():
         subprocess.run([sys.executable, '-m', 'venv', str(config.venv)], check=True)
     if not config.mypy.exists():
-        pip.main(['install', 'mypy'])
-        #subprocess.run([str(config.pip), 'install', 'mypy'], check=True)
+        subprocess.run([str(config.pip), 'install', 'mypy'], check=True)
     if not config.pytest.exists():
-        pip.main(['install', 'pytest'])
-        pip.main(['install', 'pytest-mock'])
-        pip.main(['install', 'pytest-cov'])
-        #subprocess.run([str(config.pip), 'install', 'pytest', 'pytest-mock', 'pytest-cov'], check=True)
+        subprocess.run([str(config.pip), 'install', 'pytest', 'pytest-mock', 'pytest-cov'], check=True)
     if not config.flake8.exists():
-        pip.main(['install', 'flake8'])
-        #subprocess.run([str(config.pip), 'install', 'flake8'], check=True)
+        subprocess.run([str(config.pip), 'install', 'flake8'], check=True)
     if not config.restview.exists():
-        pip.main(['install', 'restview'])
-        #subprocess.run([str(config.pip), 'install', 'restview'], check=True)
+        subprocess.run([str(config.pip), 'install', 'restview'], check=True)
 
 
 def run_mypy(config, path):
