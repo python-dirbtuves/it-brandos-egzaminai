@@ -12,21 +12,25 @@ Nuosekliai sujungtų laidininkų bendra varža skaičiuojama pagal formulę `R =
 + R_2 + \ldots + R_n`; čia `R` – nuosekliai sujungtų laidininkų bendra varža,
 `R_1, R_2, \ldots, R_n` – atskirų laidininkų varžos. 
 
-**Parašykite programą, kuri apskaičiuotų grandinės bendrą varžą**, kai grandinę
+**Parašykite programą**, kuri apskaičiuotų grandinės bendrą varžą, kai grandinę
 sudaro viena ar daugiau nuosekliai sujungtų grandinės dalių; kiekviena
 grandinės  dalis sudaryta iš dviejų ar daugiau lygiagrečiai sujungtų žinomos
-varžos laidininkų. 
+varžos laidininkų.
+
+**Duomenys**
 
 Programa turi skaityti duomenis iš tekstinio ``Duom1.txt`` failo. Pirmoje failo
-eilut ėje įrašytas nuosekliai sujungtų grandinės dalių skaičius (ne daugiau
+eilutėje įrašytas nuosekliai sujungtų grandinės dalių skaičius (ne daugiau
 kaip 100). Po  to atskirose eilutėse surašyti grandinę sudarančių dalių
 duomenys: lygiagrečiai sujungtų laidininkų skaičius (ne daugiau kaip 50) ir jų
 varžų reikšmės. 
 
+**Rezultatas**
+
 Rezultatą – apskaičiuotą **grandinės bendrą varžą** – programa turi  įrašyti į
 ``Rez1.txt`` failą dviejų ženklų po kablelio tikslumu. 
 
-**Pavyzdys**:
+**Pavyzdys**
 
 ``Duom1.txt``::
 
