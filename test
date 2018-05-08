@@ -12,10 +12,7 @@ class Config:
     def __init__(self, base):
         self.base = base
         self.venv = base / 'env'
-        if os.name == 'nt':
-            loc = 'Scripts'
-        else:
-            loc = 'bin'
+        loc = 'Scripts' if os.name == 'nt' else 'bin'
         self.pip = self.venv / (loc + '/pip')
         self.mypy = self.venv / (loc + '/mypy')
         self.pytest = self.venv / (loc + '/py.test')
