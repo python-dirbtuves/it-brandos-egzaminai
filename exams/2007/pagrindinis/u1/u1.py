@@ -8,24 +8,18 @@ Context manager failų skaitymui/rašymui.
 List comprehension
 zip() tuple unpacking
 """
-
-DUOMENU_FAILAS = "U1.txt"
-NAUJOS_EILUTĖS_SIMBOLIS = "\n"
-RAŠYMO_REŽIMAS = 'w'
-SKAITYMO_REŽIMAS = 'r'
-TEKSTO_KODUOTĖ = 'utf-8'
-REZULTATŲ_FAILAS = "U1rez.txt"
+from os.path import join
 
 
-def nuskaityti_duomenis_iš_failo(duomenu_failas):
-    failas = open(duomenu_failas, SKAITYMO_REŽIMAS, encoding=TEKSTO_KODUOTĖ)
+def nuskaityti_duomenis_iš_failo(duomenų_direktorija):
+    failas = open(join(duomenų_direktorija, "U1.txt"), "r", encoding='utf-8')
     duomenys = failas.read()
     failas.close()
     return duomenys
 
 
-def rezultato_įrašymas_į_failą(tekstas):
-    failas = open(REZULTATŲ_FAILAS, RAŠYMO_REŽIMAS, encoding=TEKSTO_KODUOTĖ)
+def rezultato_įrašymas_į_failą(duomenų_direktorija, tekstas):
+    failas = open(join(duomenų_direktorija, "U1rez.txt"), 'w', encoding='utf-8')
     failas.write(tekstas)
     failas.close()
 
@@ -85,14 +79,10 @@ def susumuoti_dienų_grybų_kiekius_ignoruojant_dienas_be_grybų(eilučių_masyv
     return dienos_ir_grybai
 
 
-def main():
-    duomenys = nuskaityti_duomenis_iš_failo(DUOMENU_FAILAS)
-    eilučių_masyvas = duomenys.split(NAUJOS_EILUTĖS_SIMBOLIS)
+def main(duomenų_direktorija):
+    duomenys = nuskaityti_duomenis_iš_failo(duomenų_direktorija)
+    eilučių_masyvas = duomenys.splitlines()
     dienos_ir_grybai = susumuoti_dienų_grybų_kiekius_ignoruojant_dienas_be_grybų(eilučių_masyvas)
     rezultatai, daugiausia = surikiuoti_didėjančia_dienų_seka_bei_rasti_diena_su_didžiausiu_laimikiu(dienos_ir_grybai)
     tekstas = suformuoti_rezultatų_tekstą(rezultatai, daugiausia)
-    rezultato_įrašymas_į_failą(tekstas)
-
-
-if __name__ == '__main__':
-    main()
+    rezultato_įrašymas_į_failą(duomenų_direktorija, tekstas)
