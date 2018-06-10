@@ -13,7 +13,7 @@ SIMBOLIŲ_KIEKIS_PAVADINIMUI = 15
 
 def nuskaityti_duomenis_iš_failo(duomenų_direktorija):
     with open(join(duomenų_direktorija, "Duom2.txt"), 'r', encoding='utf-8') as failas:
-        return failas.read().split("\n")
+        return list(failas)
 
 
 def rezultato_įrašymas_į_failą(rezultatų_masyvas, duomenų_direktorija):
