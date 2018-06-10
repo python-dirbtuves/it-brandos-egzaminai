@@ -1,7 +1,0 @@
-6 70 10 15
-Elektrėnai      50.5
-Žiežmariai      20
-Kaunas          22.35
-Raseiniai       80
-Kryžkalnis      20
-Klaipėda        100.8
