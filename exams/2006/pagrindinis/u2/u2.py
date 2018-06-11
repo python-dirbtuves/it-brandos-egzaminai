@@ -1,6 +1,6 @@
 from os.path import join
 
-SIMBOLIŲ_KIEKIS_MIESTO_PAVADINIMUI = 15
+SIMBOLIŲ_KIEKIS_MIESTO_PAVADINIMUI = 16
 
 
 def nuskaityti_duomenis_iš_failo(duomenų_direktorija):

@@ -3,7 +3,7 @@ import u2v2
 
 
 def test(path):
-    (path / 'Duom1.txt').write(
+    (path / 'Duom2.txt').write(
         '6 70 10 15',
         'Elektrėnai      50.5',
         'Žiežmariai      20',
@@ -13,7 +13,7 @@ def test(path):
         'Klaipėda        100.8',
     )
     u2.main(path)
-    assert (path / 'Rez1.txt').read() == [
+    assert (path / 'Rez2.txt').read() == [
         'Elektrėnai      10 val. 58 min.',
         'Žiežmariai      11 val. 15 min.',
         'Kaunas          11 val. 34 min.',
@@ -22,7 +22,7 @@ def test(path):
         'Klaipėda        14 val. 26 min.',
     ]
     u2v2.main(path)
-    assert (path / 'Rez1.txt').read() == [
+    assert (path / 'Rez2.txt').read() == [
         'Elektrėnai      10 val. 58 min.',
         'Žiežmariai      11 val. 15 min.',
         'Kaunas          11 val. 34 min.',
