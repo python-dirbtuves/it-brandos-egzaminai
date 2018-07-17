@@ -49,8 +49,7 @@ def run_mypy(config, path):
 def run_pytest(config, path):
     coverage = sum([['--cov', u.stem] for u in path.parent.glob('u*.py')], [])
     subprocess.run(
-        [str(config.pytest), '-vvx', '--tb=native'] + coverage + ['--cov-report', 'term-missing', '--cov-fail-under',
-                                                                  '100', str(path)],
+        [str(config.pytest), '-vvx', '--tb=native'] + coverage + ['--cov-report', 'term-missing', '--cov-fail-under', '100', str(path)],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         universal_newlines=True,
