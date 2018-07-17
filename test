@@ -9,9 +9,9 @@ import sys
 
 class Config:
 
-    def __init__(self, base):
+    def __init__(self, base, venv='env'):
         self.base = base
-        self.venv = base / 'env'
+        self.venv = base / os.path.expanduser(venv)
         loc = 'Scripts' if os.name == 'nt' else 'bin'
         self.pip = self.venv / (loc + '/pip')
         self.mypy = self.venv / (loc + '/mypy')
@@ -90,10 +90,11 @@ def find_tests(paths):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('paths', nargs='*')
+    parser.add_argument('--venv', default='env')
     args = parser.parse_args()
 
     base = pathlib.Path(__file__).resolve().parent
-    config = Config(base)
+    config = Config(base, args.venv)
 
     if args.paths:
         paths = args.paths
