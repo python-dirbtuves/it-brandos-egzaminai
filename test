@@ -23,14 +23,7 @@ class Config:
 def ensure_venv(config: Config):
     if not config.venv.exists():
         subprocess.run([sys.executable, '-m', 'venv', str(config.venv)], check=True)
-    if not config.mypy.exists():
-        subprocess.run([str(config.pip), 'install', 'mypy'], check=True)
-    if not config.pytest.exists():
-        subprocess.run([str(config.pip), 'install', 'pytest', 'pytest-mock', 'pytest-cov'], check=True)
-    if not config.flake8.exists():
-        subprocess.run([str(config.pip), 'install', 'flake8'], check=True)
-    if not config.restview.exists():
-        subprocess.run([str(config.pip), 'install', 'restview'], check=True)
+        subprocess.run([str(config.pip), 'install', '-r', 'requirements.txt'], check=True)
 
 
 def run_mypy(config, path):
