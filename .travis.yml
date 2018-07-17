@@ -2,5 +2,4 @@ language: python
 python:
   - "3.6"
 script:
-  - ls -al
-  - ./test
+  - ./test --venv ~/virtualenv/python3.6
