@@ -9,10 +9,12 @@ import sys
 
 class Config:
 
-    def __init__(self, base):
+    def __init__(self, base, venv='env'):
         self.base = base
-        self.venv = base / 'env'
+        self.venv = base / os.path.expanduser(venv)
         loc = 'Scripts' if os.name == 'nt' else 'bin'
+        py = '/python.exe' if os.name == 'nt' else '/python'
+        self.executable = self.venv / (loc + py)
         self.pip = self.venv / (loc + '/pip')
         self.mypy = self.venv / (loc + '/mypy')
         self.pytest = self.venv / (loc + '/py.test')
@@ -23,14 +25,14 @@ class Config:
 def ensure_venv(config: Config):
     if not config.venv.exists():
         subprocess.run([sys.executable, '-m', 'venv', str(config.venv)], check=True)
-    if not config.mypy.exists():
-        subprocess.run([str(config.pip), 'install', 'mypy'], check=True)
-    if not config.pytest.exists():
-        subprocess.run([str(config.pip), 'install', 'pytest', 'pytest-mock', 'pytest-cov'], check=True)
-    if not config.flake8.exists():
-        subprocess.run([str(config.pip), 'install', 'flake8'], check=True)
-    if not config.restview.exists():
-        subprocess.run([str(config.pip), 'install', 'restview'], check=True)
+    if not config.pip.exists():
+        subprocess.run(["curl", "https://bootstrap.pypa.io/get-pip.py", "-o", "get-pip.py"], check=True)
+        subprocess.run([config.executable, "get-pip.py"], check=True)
+    required_packages = [package for package in config.__dir__() if not package.startswith("__")]
+    for package in required_packages:
+        if not getattr(config, package).exists():
+            subprocess.run([str(config.pip), 'install', '-r', 'requirements.txt'], check=True)
+            break
 
 
 def run_mypy(config, path):
@@ -47,7 +49,8 @@ def run_mypy(config, path):
 def run_pytest(config, path):
     coverage = sum([['--cov', u.stem] for u in path.parent.glob('u*.py')], [])
     subprocess.run(
-        [str(config.pytest), '-vvx', '--tb=native'] + coverage + ['--cov-report', 'term-missing', '--cov-fail-under', '100', str(path)],
+        [str(config.pytest), '-vvx', '--tb=native'] + coverage + ['--cov-report', 'term-missing', '--cov-fail-under',
+                                                                  '100', str(path)],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         universal_newlines=True,
@@ -90,10 +93,11 @@ def find_tests(paths):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('paths', nargs='*')
+    parser.add_argument('--venv', default='env')
     args = parser.parse_args()
 
     base = pathlib.Path(__file__).resolve().parent
-    config = Config(base)
+    config = Config(base, args.venv)
 
     if args.paths:
         paths = args.paths
