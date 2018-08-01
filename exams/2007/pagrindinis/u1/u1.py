@@ -19,7 +19,7 @@ def nuskaityti_duomenis_iš_failo(duomenų_direktorija):
 
 
 def rezultato_įrašymas_į_failą(duomenų_direktorija, tekstas):
-    failas = open(join(duomenų_direktorija, "U1rez.txt"), 'w', encoding='utf-8')
+    failas = open(join(duomenų_direktorija, "Rez1.txt"), 'w', encoding='utf-8')
     failas.write(tekstas)
     failas.close()
 

@@ -3,7 +3,7 @@ import u1v2
 
 
 def test(path):
-    (path / 'Duom1.txt').write(
+    (path / 'U1.txt').write(
         "11",
         "2 8 4 0",
         "3 1 0 9",
