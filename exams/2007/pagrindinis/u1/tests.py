@@ -1,5 +1,4 @@
 import u1
-import u1v2
 
 
 def test(path):
@@ -18,18 +17,7 @@ def test(path):
         "3 4 44 444",
     )
     u1.main(path)
-    assert (path / 'Rez1.txt').read() == [
-        '1 2 3 4',
-        '2 12 8 4',
-        '3 5 44 453',
-        '5 4 14 2',
-        '15 25 45 13',
-        '16 7 15 27',
-        '28 13 13 13',
-        '3 502',
-    ]
-    u1v2.main(path)
-    assert (path / 'Rez1.txt').read() == [
+    assert (path / 'U1rez.txt').read() == [
         '1 2 3 4',
         '2 12 8 4',
         '3 5 44 453',
