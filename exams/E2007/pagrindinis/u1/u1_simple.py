@@ -32,7 +32,8 @@ def surikiuoti_didėjančia_dienų_seka_bei_rasti_diena_su_didžiausiu_laimikiu(
         elif diena < rezultatai[-1][0]:
             # Jeigu paskutinis įrašas turi dieną su didesniu skaičiumi, nei dabartinės interacijos diena
             for i in range(len(rezultatai)):
-                # Interuojame per rezultatus ir ieškome pirmos didesnės dienos reikšmęs, prieš kurią įstatysime naują įrašą
+                # Interuojame per rezultatus ir ieškome pirmos didesnės dienos reikšmęs, prieš kurią įstatysime naują
+                # įrašą
                 if rezultatai[i][0] > diena:
                     rezultatai.insert(i, [diena] + grybai)
                     break
