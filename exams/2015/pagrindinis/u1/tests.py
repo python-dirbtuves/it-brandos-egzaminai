@@ -9,6 +9,6 @@ import u1
     ('5 4 3 2 1 0 0 0 0 0', '5 5 5 5 5 5 5 6 6 7 7 7 6 6 5 5 4 3 2 1')
 ])
 def test(path, i, o):
-    (path/'U1.txt').write(i)
+    (path / 'U1.txt').write(i)
     u1.main(path)
-    assert (path/'U1rez.txt').read() == [o]
+    assert (path / 'U1rez.txt').read() == [o]

@@ -1,3 +1,7 @@
+.. image:: https://travis-ci.org/python-dirbtuves/it-brandos-egzaminai.svg?branch=master
+   :target: https://travis-ci.org/python-dirbtuves/it-brandos-egzaminai
+
+
 Brandos egzaminų programavimo užduočių sprendimai
 =================================================
 
