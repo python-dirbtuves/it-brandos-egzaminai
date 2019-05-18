@@ -154,201 +154,213 @@ Sprendimų sąrašas
 |          |                 +----------------------------------------+-------+------------+
 |          |                 | |2017k2|_                              |       |            |
 +----------+-----------------+----------------------------------------+-------+------------+
+| **2018** | |2018p|_        | |2018p1|_                              |       |            |
+|          |                 +----------------------------------------+-------+------------+
+|          |                 | |2018p2|_                              |       |            |
++----------+-----------------+----------------------------------------+-------+------------+
 
 
 .. |2006p| replace:: Pagrindinis
 .. _2006p: http://nec.lt/failai/149_uzduotys_2006_VBE_IT.pdf
 .. |2006p1| replace:: Elektros grandinės varžos skaičiavimas
-.. _2006p1: exams/2006/pagrindinis/u1/README.rst
+.. _2006p1: exams/E2006/pagrindinis/u1/README.rst
 .. |2006p1s| replace:: sprendimas
-.. _2006p1s: exams/2006/pagrindinis/u1/u1.py
+.. _2006p1s: exams/E2006/pagrindinis/u1/u1.py
 .. |2006p2| replace:: Kelionė
-.. _2006p2: exams/2006/pagrindinis/u2/README.rst
+.. _2006p2: exams/E2006/pagrindinis/u2/README.rst
 
 .. |2007p| replace:: Pagrindinis
 .. _2007p: http://nec.lt/failai/80_uzduotys_2007_VBE_IT.pdf
 .. |2007p1| replace:: Grybai
-.. _2007p1: exams/2007/pagrindinis/u1/README.rst
+.. _2007p1: exams/E2007/pagrindinis/u1/README.rst
 .. |2007p2| replace:: Grybautojai
-.. _2007p2: exams/2007/pagrindinis/u2/README.rst
+.. _2007p2: exams/E2007/pagrindinis/u2/README.rst
 
 .. |2008p| replace:: Pagrindinis
 .. _2008p: http://nec.lt/failai/511_uzduotys_2008_VBE_IT.pdf
 .. |2008p1| replace:: Tyrimas
-.. _2008p1: exams/2008/pagrindinis/u1/README.rst
+.. _2008p1: exams/E2008/pagrindinis/u1/README.rst
 .. |2008p2| replace:: Transportas
-.. _2008p2: exams/2008/pagrindinis/u2/README.rst
+.. _2008p2: exams/E2008/pagrindinis/u2/README.rst
 
 .. |2008k| replace:: Pakartotinis
 .. _2008k: http://nec.lt/failai/870_2008_pakartotine_s_informacines_technologijos.zip
 .. |2008k1| replace:: Metro
-.. _2008k1: exams/2008/pakartotinis/u1/README.rst
+.. _2008k1: exams/E2008/pakartotinis/u1/README.rst
 .. |2008k2| replace:: Amžius
-.. _2008k2: exams/2008/pakartotinis/u2/README.rst
+.. _2008k2: exams/E2008/pakartotinis/u2/README.rst
 
 .. |2009p| replace:: Pagrindinis
 .. _2009p: http://nec.lt/failai/1044_uzduotys_2009_VBE_inf_technol.pdf
 .. |2009p1| replace:: Mainai
-.. _2009p1: exams/2009/pagrindinis/u1/README.rst
+.. _2009p1: exams/E2009/pagrindinis/u1/README.rst
 .. |2009p1s| replace:: sprendimas
-.. _2009p1s: exams/2009/pagrindinis/u1/u1.py
+.. _2009p1s: exams/E2009/pagrindinis/u1/u1.py
 .. |2009p2| replace:: Varžybos
-.. _2009p2: exams/2009/pagrindinis/u2/README.rst
+.. _2009p2: exams/E2009/pagrindinis/u2/README.rst
 
 .. |2009k| replace:: Pakartotinis
 .. _2009k: http://nec.lt/failai/1423_IT-2VBE-2009.pdf
 .. |2009k1| replace:: Turistai
-.. _2009k1: exams/2009/pakartotinis/u1/README.rst
+.. _2009k1: exams/E2009/pakartotinis/u1/README.rst
 .. |2009k2| replace:: Varžybos
-.. _2009k2: exams/2009/pakartotinis/u2/README.rst
+.. _2009k2: exams/E2009/pakartotinis/u2/README.rst
 
 .. |2010b| replace:: Bandomasis
 .. _2010b: http://nec.lt/failai/1506_IT_VBE_band_2010.pdf
 .. |2010b1| replace:: Žirniai
-.. _2010b1: exams/2010/bandomasis/u1/README.rst
+.. _2010b1: exams/E2010/bandomasis/u1/README.rst
 .. |2010b2| replace:: Pasirinkimas
-.. _2010b2: exams/2010/bandomasis/u2/README.rst
+.. _2010b2: exams/E2010/bandomasis/u2/README.rst
 
 .. |2010p| replace:: Pagrindinis
 .. _2010p: http://nec.lt/failai/1602_IT-pagr-2010.pdf
 .. |2010p1| replace:: Šachmatų turnyras
-.. _2010p1: exams/2010/pagrindinis/u1/README.rst
+.. _2010p1: exams/E2010/pagrindinis/u1/README.rst
 .. |2010p2| replace:: Gimtadienis
-.. _2010p2: exams/2010/pagrindinis/u2/README.rst
+.. _2010p2: exams/E2010/pagrindinis/u2/README.rst
 
 .. |2010k| replace:: Pakartotinis
 .. _2010k: http://nec.lt/failai/1904_IT-2-2010_uzduotis.pdf
 .. |2010k1| replace:: Šachmatų turnyras
-.. _2010k1: exams/2010/pakartotinis/u1/README.rst
+.. _2010k1: exams/E2010/pakartotinis/u1/README.rst
 .. |2010k2| replace:: Gimtadienis
-.. _2010k2: exams/2010/pakartotinis/u2/README.rst
+.. _2010k2: exams/E2010/pakartotinis/u2/README.rst
 
 .. |2011p| replace:: Pagrindinis
 .. _2011p: http://nec.lt/failai/2062_IT-VBE-1_2011.pdf
 .. |2011p1| replace:: Pirštinės
-.. _2011p1: exams/2011/pagrindinis/u1/README.rst
+.. _2011p1: exams/E2011/pagrindinis/u1/README.rst
 .. |2011p2| replace:: Šokiai
-.. _2011p2: exams/2011/pagrindinis/u2/README.rst
+.. _2011p2: exams/E2011/pagrindinis/u2/README.rst
 
 .. |2011k| replace:: Pakartotinis
 .. _2011k: http://nec.lt/failai/2425_IT-2-2011.pdf
 .. |2011k1| replace:: Pirštinės
-.. _2011k1: exams/2011/pakartotinis/u1/README.rst
+.. _2011k1: exams/E2011/pakartotinis/u1/README.rst
 .. |2011k2| replace:: Šokiai
-.. _2011k2: exams/2011/pakartotinis/u2/README.rst
+.. _2011k2: exams/E2011/pakartotinis/u2/README.rst
 
 .. |2012p| replace:: Pagrindinis
 .. _2012p: http://nec.lt/failai/2730_IT-1-2012.pdf
 .. |2012p1| replace:: Krepšinis
-.. _2012p1: exams/2012/pagrindinis/u1/README.rst
+.. _2012p1: exams/E2012/pagrindinis/u1/README.rst
 .. |2012p1s| replace:: sprendimas
-.. _2012p1s: exams/2012/pagrindinis/u1/u1.py
+.. _2012p1s: exams/E2012/pagrindinis/u1/u1.py
 .. |2012p2| replace:: Kauliukai
-.. _2012p2: exams/2012/pagrindinis/u2/README.rst
+.. _2012p2: exams/E2012/pagrindinis/u2/README.rst
 .. |2012p2s| replace:: sprendimas
-.. _2012p2s: exams/2012/pagrindinis/u2/u2.py
+.. _2012p2s: exams/E2012/pagrindinis/u2/u2.py
 
 .. |2013z| replace:: Pavyzdinis
 .. _2013z: http://nec.lt/failai/3398_2013-IT-pavyz-uzd.pdf
 .. |2013z1| replace:: Skaičių dalumas
-.. _2013z1: exams/2013/pavyzdinis/u1/README.rst
+.. _2013z1: exams/E2013/pavyzdinis/u1/README.rst
 .. |2013z2| replace:: Batai
-.. _2013z2: exams/2013/pavyzdinis/u2/README.rst
+.. _2013z2: exams/E2013/pavyzdinis/u2/README.rst
 .. |2013z3| replace:: Žvejai
-.. _2013z3: exams/2013/pavyzdinis/u3/README.rst
+.. _2013z3: exams/E2013/pavyzdinis/u3/README.rst
 
 .. |2013p| replace:: Pagrindinis
 .. _2013p: http://nec.lt/failai/3679_2013-IT-1-uzd-intern.pdf
 .. |2013p1| replace:: Siuntų tarnyba
-.. _2013p1: exams/2013/pakartotinis/u1/README.rst
+.. _2013p1: exams/E2013/pakartotinis/u1/README.rst
 .. |2013p1s| replace:: sprendimas
-.. _2013p1s: exams/2013/pagrindinis/u1/u1.py
+.. _2013p1s: exams/E2013/pagrindinis/u1/u1.py
 .. |2013p2| replace:: Miestai ir apskritys
-.. _2013p2: exams/2013/pakartotinis/u2/README.rst
+.. _2013p2: exams/E2013/pakartotinis/u2/README.rst
 .. |2013p2s| replace:: sprendimas
-.. _2013p2s: exams/2013/pagrindinis/u2/u2.py
+.. _2013p2s: exams/E2013/pagrindinis/u2/u2.py
 
 .. |2014b| replace:: Bandomasis
 .. _2014b: http://nec.lt/failai/4118_2014-IT-bandomasis.pdf
 .. |2014b1| replace:: Picerija
-.. _2014b1: exams/2014/bandomasis/u1/README.rst
+.. _2014b1: exams/E2014/bandomasis/u1/README.rst
 .. |2014b1s| replace:: sprendimas
-.. _2014b1s: exams/2014/bandomasis/u1/u1.py
+.. _2014b1s: exams/E2014/bandomasis/u1/u1.py
 .. |2014b2| replace:: Savivaldybės ir apskritys
-.. _2014b2: exams/2014/bandomasis/u2/README.rst
+.. _2014b2: exams/E2014/bandomasis/u2/README.rst
 .. |2014b2s| replace:: sprendimas
-.. _2014b2s: exams/2014/bandomasis/u2/u2.py
+.. _2014b2s: exams/E2014/bandomasis/u2/u2.py
 
 .. |2014p| replace:: Pagrindinis
 .. _2014p: http://nec.lt/failai/4429_2014-IT-VBE.pdf
 .. |2014p1| replace:: Balsavimo rezultatai
-.. _2014p1: exams/2014/pagrindinis/u1/README.rst
+.. _2014p1: exams/E2014/pagrindinis/u1/README.rst
 .. |2014p1s| replace:: sprendimas
-.. _2014p1s: exams/2014/pagrindinis/u1/u1.py
+.. _2014p1s: exams/E2014/pagrindinis/u1/u1.py
 .. |2014p2| replace:: Marsaeigis
-.. _2014p2: exams/2014/pagrindinis/u2/README.rst
+.. _2014p2: exams/E2014/pagrindinis/u2/README.rst
 .. |2014p2s| replace:: sprendimas
-.. _2014p2s: exams/2014/pagrindinis/u2/u2.py
+.. _2014p2s: exams/E2014/pagrindinis/u2/u2.py
 
 .. |2014k| replace:: Pakartotinis
 .. _2014k: http://nec.lt/failai/4914_2014-IT-1_uzd-PK.pdf
 .. |2014k1| replace:: Balsavimo rezultatai
-.. _2014k1: exams/2014/pakartotinis/u1/README.rst
+.. _2014k1: exams/E2014/pakartotinis/u1/README.rst
 .. |2014k1s| replace:: sprendimas
-.. _2014k1s: exams/2014/pakartotinis/u1/u1.py
+.. _2014k1s: exams/E2014/pakartotinis/u1/u1.py
 .. |2014k2| replace:: Marsaeigis
-.. _2014k2: exams/2014/pakartotinis/u2/README.rst
+.. _2014k2: exams/E2014/pakartotinis/u2/README.rst
 .. |2014k2s| replace:: sprendimas
-.. _2014k2s: exams/2014/pakartotinis/u2/u2.py
+.. _2014k2s: exams/E2014/pakartotinis/u2/u2.py
 
 .. |2015p| replace:: Pagrindinis
 .. _2015p: http://www.nec.lt/failai/5256_IT-VBE-1_2015.pdf
 .. |2015p1| replace:: Dalybos
-.. _2015p1: exams/2015/pagrindinis/u1/README.rst
+.. _2015p1: exams/E2015/pagrindinis/u1/README.rst
 .. |2015p1s| replace:: sprendimas
-.. _2015p1s: exams/2015/pagrindinis/u1/u1.py
+.. _2015p1s: exams/E2015/pagrindinis/u1/u1.py
 .. |2015p2| replace:: Avys
-.. _2015p2: exams/2015/pagrindinis/u2/README.rst
+.. _2015p2: exams/E2015/pagrindinis/u2/README.rst
 
 .. |2015k| replace:: Pakartotinis
 .. _2015k: http://nec.lt/failai/5943_IT.zip
 .. |2015k1| replace:: Lobis
-.. _2015k1: exams/2015/pakartotinis/u1/README.rst
+.. _2015k1: exams/E2015/pakartotinis/u1/README.rst
 .. |2015k2| replace:: Mokiniai
-.. _2015k2: exams/2015/pakartotinis/u2/README.rst
+.. _2015k2: exams/E2015/pakartotinis/u2/README.rst
 
 .. |2016p| replace:: Pagrindinis
 .. _2016p: http://nec.lt/failai/6287_IT-VBE-1_2016-GALUTINIS.pdf
 .. |2016p1| replace:: Kuprinės
-.. _2016p1: exams/2016/pagrindinis/u1/README.rst
+.. _2016p1: exams/E2016/pagrindinis/u1/README.rst
 .. |2016p1s| replace:: sprendimas
-.. _2016p1s: exams/2016/pagrindinis/u1/u1.py
+.. _2016p1s: exams/E2016/pagrindinis/u1/u1.py
 .. |2016p2| replace:: Mankšta
-.. _2016p2: exams/2016/pagrindinis/u2/README.rst
+.. _2016p2: exams/E2016/pagrindinis/u2/README.rst
 .. |2016p2s| replace:: sprendimas
-.. _2016p2s: exams/2016/pagrindinis/u2/u2.py
+.. _2016p2s: exams/E2016/pagrindinis/u2/u2.py
 
 .. |2016k| replace:: Pakartotinis
 .. _2016k: http://nec.lt/failai/6688_IT-VBE-2_2016.pdf
 .. |2016k1| replace:: Ūgis
-.. _2016k1: exams/2016/pakartotinis/u1/README.rst
+.. _2016k1: exams/E2016/pakartotinis/u1/README.rst
 .. |2016k2| replace:: Takai
-.. _2016k2: exams/2016/pakartotinis/u2/README.rst
+.. _2016k2: exams/E2016/pakartotinis/u2/README.rst
 
 .. |2017p| replace:: Pagrindinis
 .. _2017p: http://nec.lt/failai/6996_IT-VBE-1_2017-GALUTINE.pdf
 .. |2017p1| replace:: Šešioliktainiai skaičiai
-.. _2017p1: exams/2017/pagrindinis/u1/README.rst
+.. _2017p1: exams/E2017/pagrindinis/u1/README.rst
 .. |2017p2| replace:: Piešinys
-.. _2017p2: exams/2017/pagrindinis/u2/README.rst
+.. _2017p2: exams/E2017/pagrindinis/u2/README.rst
 
 .. |2017k| replace:: Pakartotinis
 .. _2017k: http://nec.lt/failai/7333_IT-VBE-2_2017.pdf
 .. |2017k1| replace:: Dešimtainiai skaičiai
-.. _2017k1: exams/2017/pakartotinis/u1/README.rst
+.. _2017k1: exams/E2017/pakartotinis/u1/README.rst
 .. |2017p1s| replace:: sprendimas
-.. _2017p1s: exams/2017/pagrindinis/u1/u1.py
+.. _2017p1s: exams/E2017/pagrindinis/u1/u1.py
 .. |2017k2| replace:: Kvadratai
-.. _2017k2: exams/2017/pakartotinis/u2/README.rst
+.. _2017k2: exams/E2017/pakartotinis/u2/README.rst
+
+.. |2018p| replace:: Pagrindinis
+.. _2018p: https://nec.lt/failai/7417_IT-VBE-1_2018-GALUTINE.pdf
+.. |2018p1| replace:: Vėliavėlės
+.. _2018p1: exams/E2018/pagrindinis/u1/README.rst
+.. |2018p2| replace:: Slidininkai
+.. _2018p2: exams/E2018/pagrindinis/u2/README.rst
+
 
 .. _Python: https://www.python.org/
