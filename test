@@ -35,7 +35,12 @@ def run_mypy(config, paths):
 
 
 def run_pytest(config, paths):
-    coverage = sum([['--cov', str(p)] for p in paths], [])
+    coverage = []
+    for p in paths:
+        if p.name == 'tests.py':
+            coverage += ['--cov', p.parent]
+        else:
+            coverage += ['--cov', p]
     subprocess.run(
         [str(config.pytest), '-vvx', '--tb=native'] + coverage + ['--cov-report', 'term-missing', '--cov-fail-under', '100'] + paths,
         universal_newlines=True,
