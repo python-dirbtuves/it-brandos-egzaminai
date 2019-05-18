@@ -14,7 +14,7 @@ Visos užduotys išspręstos naudojant Python_ programavimo kalbą.
 Kaip paleisti sprendimų programas?
 ----------------------------------
 
-Tam, kad paleisti sprendimų programas reikalinga **Python 3.6** ar vėlesnė
+Tam, kad paleisti sprendimų programas reikalinga **Python 3.7** ar vėlesnė
 versija.
 
 Visas sprendimų programas galite paleisti iš komandų eilutės::
@@ -156,7 +156,7 @@ Sprendimų sąrašas
 +----------+-----------------+----------------------------------------+-------+------------+
 | **2018** | |2018p|_        | |2018p1|_                              |       | |2018p1s|_ |
 |          |                 +----------------------------------------+-------+------------+
-|          |                 | |2018p2|_                              |       |            |
+|          |                 | |2018p2|_                              |       | |2018p2s|_ |
 +----------+-----------------+----------------------------------------+-------+------------+
 
 
@@ -363,6 +363,8 @@ Sprendimų sąrašas
 .. _2018p1s: exams/E2018/pagrindinis/u1/u1.py
 .. |2018p2| replace:: Slidininkai
 .. _2018p2: exams/E2018/pagrindinis/u2/README.rst
+.. |2018p2s| replace:: sprendimas
+.. _2018p2s: exams/E2018/pagrindinis/u2/u2.py
 
 
 .. _Python: https://www.python.org/
