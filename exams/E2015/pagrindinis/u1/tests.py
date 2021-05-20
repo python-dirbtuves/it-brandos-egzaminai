@@ -1,5 +1,7 @@
 import pytest
 from exams.E2015.pagrindinis.u1 import u1
+from exams.testing import read
+from exams.testing import write
 
 
 @pytest.mark.parametrize('i,o', [
@@ -9,6 +11,6 @@ from exams.E2015.pagrindinis.u1 import u1
     ('5 4 3 2 1 0 0 0 0 0', '5 5 5 5 5 5 5 6 6 7 7 7 6 6 5 5 4 3 2 1')
 ])
 def test(path, i, o):
-    (path / 'U1.txt').write(i)
+    write(path / 'U1.txt', [i])
     u1.main(path)
-    assert (path / 'U1rez.txt').read() == [o]
+    assert read(path / 'U1rez.txt') == [o]

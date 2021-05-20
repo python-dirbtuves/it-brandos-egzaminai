@@ -5,6 +5,8 @@ import os
 import pathlib
 import subprocess
 import sys
+from itertools import chain
+from typing import List
 
 
 class Config:
@@ -26,9 +28,10 @@ def ensure_venv(config: Config):
         subprocess.run([str(config.pip), 'install', '-r', 'requirements.txt'], check=True)
 
 
-def run_mypy(config, paths):
+def run_mypy(config, paths: List[str]):
     subprocess.run(
-        [str(config.mypy), '--follow-imports=skip', '--show-traceback'] + paths,
+        [str(config.mypy), '--follow-imports=skip', '--show-traceback'] +
+        list(chain.from_iterable(['-p', p] for p in paths)),
         universal_newlines=True,
         check=True,
     )

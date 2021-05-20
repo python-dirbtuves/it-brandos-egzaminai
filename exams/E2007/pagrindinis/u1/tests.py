@@ -1,9 +1,11 @@
 from exams.E2007.pagrindinis.u1 import u1
 from exams.E2007.pagrindinis.u1 import u1_simple
+from exams.testing import read
+from exams.testing import write
 
 
 def test(path):
-    (path / 'U1.txt').write(
+    write(path / 'U1.txt', [
         "11",
         "2 8 4 0",
         "3 1 0 9",
@@ -16,9 +18,9 @@ def test(path):
         "16 2 0 2",
         "16 5 15 25",
         "3 4 44 444",
-    )
+    ])
     u1.main(path)
-    assert (path / 'U1rez.txt').read() == [
+    assert read(path / 'U1rez.txt') == [
         '1 2 3 4',
         '2 12 8 4',
         '3 5 44 453',
@@ -29,7 +31,7 @@ def test(path):
         '3 502',
     ]
     u1_simple.main(path)
-    assert (path / 'U1rez.txt').read() == [
+    assert read(path / 'U1rez.txt') == [
         '1 2 3 4',
         '2 12 8 4',
         '3 5 44 453',

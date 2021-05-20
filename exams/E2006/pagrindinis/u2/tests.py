@@ -1,9 +1,11 @@
 from exams.E2006.pagrindinis.u2 import u2
 from exams.E2006.pagrindinis.u2 import u2_simple
+from exams.testing import read
+from exams.testing import write
 
 
 def test(path):
-    (path / 'Duom2.txt').write(
+    write(path / 'Duom2.txt', [
         '6 70 10 15',
         'Elektrėnai     50.5',
         'Žiežmariai     20',
@@ -11,9 +13,9 @@ def test(path):
         'Raseiniai      80',
         'Kryžkalnis     20',
         'Klaipėda       100.8',
-    )
+    ])
     u2.main(path)
-    assert (path / 'Rez2.txt').read() == [
+    assert read(path / 'Rez2.txt') == [
         'Elektrėnai     10 val. 58 min.',
         'Žiežmariai     11 val. 15 min.',
         'Kaunas         11 val. 34 min.',
@@ -22,7 +24,7 @@ def test(path):
         'Klaipėda       14 val. 26 min.',
     ]
     u2_simple.main(path)
-    assert (path / 'Rez2.txt').read() == [
+    assert read(path / 'Rez2.txt') == [
         'Elektrėnai     10 val. 58 min.',
         'Žiežmariai     11 val. 15 min.',
         'Kaunas         11 val. 34 min.',

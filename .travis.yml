@@ -1,6 +1,6 @@
 dist: xenial
 language: python
 python:
-  - "3.7"
+  - "3.9"
 script:
-  - ./test --venv ~/virtualenv/python3.7
+  - ./test --venv ~/virtualenv/python3.9

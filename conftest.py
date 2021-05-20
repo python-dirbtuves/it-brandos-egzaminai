@@ -1,18 +1,8 @@
-import os
-import pathlib
-
 import pytest
 
-
-class Path(pathlib.WindowsPath if os.name == 'nt' else pathlib.PosixPath):
-
-    def write(self, *lines):
-        self.write_text('\n'.join(lines))
-
-    def read(self):
-        return self.read_text().splitlines()
+from exams.testing import Path
 
 
 @pytest.fixture()
-def path(tmpdir):
+def path(tmpdir) -> Path:
     return Path(tmpdir)

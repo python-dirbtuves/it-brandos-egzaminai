@@ -1,5 +1,8 @@
-def read_data(path):
-    data = (path / 'U1.txt').read()[0]
+from pathlib import Path
+
+
+def read_data(path: Path):
+    data = (path / 'U1.txt').read_text()
     return list(map(int, data.split()))
 
 
@@ -21,7 +24,7 @@ def simulate(data):
 
 
 def write_data(path, data):
-    (path / 'U1rez.txt').write(' '.join(map(str, data)))
+    (path / 'U1rez.txt').write_text(' '.join(map(str, data)))
 
 
 def main(path):

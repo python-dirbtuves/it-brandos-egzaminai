@@ -1,6 +1,8 @@
+*.egg-info/
 *.pyc
 .cache/
 .coverage
+.idea/
 .mypy_cache/
 .pytest_cache/
 .ropeproject/

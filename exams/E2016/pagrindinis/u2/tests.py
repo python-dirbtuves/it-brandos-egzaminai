@@ -1,8 +1,10 @@
 from exams.E2016.pagrindinis.u2 import u2
+from exams.testing import read
+from exams.testing import write
 
 
 def test(path):
-    (path / 'U2.txt').write(
+    write(path / 'U2.txt', [
         '10',
         'prisitraukimai       10',
         'atsispaudimai        15',
@@ -14,9 +16,9 @@ def test(path):
         'atsilenkimai         10',
         'atsispaudimai        2',
         'atsispaudimai        2',
-    )
+    ])
     u2.main(path)
-    assert (path / 'U2rez.txt').read() == [
+    assert read(path / 'U2rez.txt') == [
         'atsilenkimai         47',
         'prisitraukimai       26',
         'atsispaudimai        19',

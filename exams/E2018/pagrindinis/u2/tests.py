@@ -1,8 +1,11 @@
 from exams.E2018.pagrindinis.u2 import u2
+from exams.testing import Path
+from exams.testing import read
+from exams.testing import write
 
 
-def test(path):
-    (path / 'U2.txt').write(
+def test(path: Path):
+    write(path / 'U2.txt', [
         '6',
         'Petras A. Petraitis 15 20 00',
         'Jurgis Jurgutis     16 12 12',
@@ -16,9 +19,9 @@ def test(path):
         'Romas Senasis       16 5 35',
         'Rytis Uosis Ainis   16 55 59',
         'Jurgis Jurgutis     16 42 22',
-    )
+    ])
     u2.main(path)
-    assert (path / 'U2rez.txt').read() == [
+    assert read(path / 'U2rez.txt') == [
         'Zigmas Nosis        20 6',
         'Jurgis Jurgutis     30 10',
         'Petras A. Petraitis 30 10',
