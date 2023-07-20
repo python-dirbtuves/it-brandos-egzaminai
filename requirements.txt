@@ -22,10 +22,10 @@ iniconfig==1.1.1
     # via pytest
 mccabe==0.6.1
     # via flake8
-mypy-extensions==0.4.3
-    # via mypy
 mypy==0.812
     # via -r requirements.in
+mypy-extensions==0.4.3
+    # via mypy
 packaging==20.9
     # via
     #   bleach
@@ -42,21 +42,21 @@ pycodestyle==2.7.0
     # via flake8
 pyflakes==2.3.1
     # via flake8
-pygments==2.9.0
+pygments==2.15.0
     # via
     #   readme-renderer
     #   restview
 pyparsing==2.4.7
     # via packaging
-pytest-cov==2.12.0
-    # via -r requirements.in
-pytest-mock==3.6.1
-    # via -r requirements.in
 pytest==6.2.4
     # via
     #   -r requirements.in
     #   pytest-cov
     #   pytest-mock
+pytest-cov==2.12.0
+    # via -r requirements.in
+pytest-mock==3.6.1
+    # via -r requirements.in
 readme-renderer==29.0
     # via restview
 restview==2.9.2
