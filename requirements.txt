@@ -4,8 +4,6 @@
 #
 #    pip-compile
 #
-attrs==21.2.0
-    # via pytest
 bleach==3.3.0
     # via readme-renderer
 click==8.0.1
@@ -26,7 +24,7 @@ mypy==0.812
     # via -r requirements.in
 mypy-extensions==0.4.3
     # via mypy
-packaging==20.9
+packaging==26.2
     # via
     #   bleach
     #   pytest
@@ -34,9 +32,7 @@ pep517==0.10.0
     # via pip-tools
 pip-tools==6.1.0
     # via -r requirements.in
-pluggy==0.13.1
-    # via pytest
-py==1.10.0
+pluggy==1.6.0
     # via pytest
 pycodestyle==2.7.0
     # via flake8
@@ -44,11 +40,10 @@ pyflakes==2.3.1
     # via flake8
 pygments==2.15.0
     # via
+    #   pytest
     #   readme-renderer
     #   restview
-pyparsing==2.4.7
-    # via packaging
-pytest==6.2.4
+pytest==9.0.3
     # via
     #   -r requirements.in
     #   pytest-cov
@@ -69,7 +64,6 @@ toml==0.10.2
     # via
     #   coverage
     #   pep517
-    #   pytest
 typed-ast==1.4.3
     # via mypy
 typing-extensions==3.10.0.0
