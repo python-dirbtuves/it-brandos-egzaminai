@@ -6,7 +6,7 @@
 #
 attrs==21.2.0
     # via pytest
-bleach==3.3.0
+bleach==6.4.0
     # via readme-renderer
 click==8.0.1
     # via pip-tools
@@ -27,9 +27,7 @@ mypy==0.812
 mypy-extensions==0.4.3
     # via mypy
 packaging==20.9
-    # via
-    #   bleach
-    #   pytest
+    # via pytest
 pep517==0.10.0
     # via pip-tools
 pip-tools==6.1.0
@@ -62,9 +60,7 @@ readme-renderer==29.0
 restview==2.9.2
     # via -r requirements.in
 six==1.16.0
-    # via
-    #   bleach
-    #   readme-renderer
+    # via readme-renderer
 toml==0.10.2
     # via
     #   coverage
