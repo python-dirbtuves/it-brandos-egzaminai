@@ -4,7 +4,9 @@
 #
 #    pip-compile
 #
-bleach==3.3.0
+attrs==21.2.0
+    # via pytest
+bleach==6.4.0
     # via readme-renderer
 click==8.0.1
     # via pip-tools
@@ -38,7 +40,7 @@ pycodestyle==2.7.0
     # via flake8
 pyflakes==2.3.1
     # via flake8
-pygments==2.15.0
+pygments==2.20.0
     # via
     #   pytest
     #   readme-renderer
@@ -57,9 +59,7 @@ readme-renderer==29.0
 restview==2.9.2
     # via -r requirements.in
 six==1.16.0
-    # via
-    #   bleach
-    #   readme-renderer
+    # via readme-renderer
 toml==0.10.2
     # via
     #   coverage
